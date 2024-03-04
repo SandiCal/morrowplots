@@ -1,10 +1,19 @@
 Package: morrowplots
-Title: What the Package Does (One Line, Title Case)
+Title: Historical Agricultural Data of the University of Illinois
 Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Authors@R: c(
+    person("Heidi", "Imker", email = "imker@illinois.edu", role = "aut", 
+    comment = c(ORCID = "0000-0003-4748-7453")),
+	person("Sandi", "Caldron", email = "caldron2@illinois.edu", role = c("cre","aut"), 
+	comment = c(ORCID = "0000-0001-6392-5279")),
+	person("Josh", "Henry", email = "jkhenry@illionis.edu", role = "aut", 
+	comment = c(ORCID = "0000-0002-7826-5960")),
+    person("Brooke", "Anderson", 
+    email = "brooke.anderson@colostate.edu", role = "ctb"))
+Description: The dataset compiled to include planting, treatment and yield data 
+    recorded for the three enduring plots (3, 4 and 5) starting in 1888. Not all 
+    variables were recorded for all years of the experiment. Missing values are 
+    represented with NA.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

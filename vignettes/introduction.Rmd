@@ -1,5 +1,5 @@
 ---
-title: "or more of a title that just introduction"
+title: "The Morrow Plots Historical Agricultural Data"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{introduction}
@@ -17,3 +17,9 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(morrowplots)
 ```
+
+Established in 1876, the Morrow Plots at the University of Illinois Urbana Champaign are the longest-running continuous agricultural fields in the Americas, and test the impact of soil treatments and crop rotation on corn, Illinois's most important crop. Data collection began in 1888 and has recorded planting, treatment, and yield data annually since then. 
+
+The dataset is structured to reflect the way the actual crop field is organized and planted. The field is separated into 3 plots - 3, 4 and 5. Originally, there were 10 plots, but over time plots 1,2 and 6-10 were ceded to the campus for building projects as the university grew. Each plot tests a different crop rotation. Plot 3 grows corn every year. Plot 4 has a two-year rotation of corn and oats or soybeans. Plot 5 has a three-year rotation of corn, oats, and hay. Over the years, the non-corn crops have changed somewhat to reflect changing farming practices, but the corn has remained consistent. Each of the 3 plots is divided into 8 subplots - 4 Northern subplots (NA, NB, NC, and ND) and 4 Southern subplots (SA, SB, SC, and SD) - that test different soil treatments, which might commonly be called fertilizers. Some of the subplots have never received any soil treatments. Other subplots have received different treatments over different phases of the experiment. 
+
+Each row of the dataset represents one year of data for one subplot (e.g., subplot 3NC) and records the crop planted, the treatments employed, and the yields harvested. As with most long-term experiments, methods for data collection and record keeping have changed over time. Some rows contain additional data such as the breed of crop planted, the planting date, and the specific amount of treatment applied. Known nulls in the data are represented by NA. 

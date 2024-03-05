@@ -4,7 +4,7 @@
 #' University of Illinois at Urbana Champaign from 1888--2021.
 #'
 #' @format
-#' A dataframe containing 26 variables and 3216 rows.
+#' A dataframe containing 26 variables and 3216 rows with the following variables:
 #' \describe{
 #'  \item{phase}{An integer between 1-5 that describes the important stages of the experiment when plot size, crop rotation or treatments changed.}
 #'  \item{year}{Date in YYYY format for year crops were planted and harvested.}

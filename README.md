@@ -50,3 +50,6 @@ You can also embed plots, for example:
 
 In that case, don’t forget to commit and push the resulting figure
 files, so they display on GitHub and CRAN.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hsipxaNGnbc?si=2xIMfY8ndPYl_zSZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>

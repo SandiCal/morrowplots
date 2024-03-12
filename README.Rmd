@@ -16,33 +16,61 @@ knitr::opts_chunk$set(
 # morrowplots
 
 <!-- badges: start -->
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/TBD)](https://cran.r-project.org/package=morrowplots)
 <!-- badges: end -->
 
-The goal of morrowplots is to ...
+Use morrowplots to load, explore, and analyze nearly 150 years of ag data from the historic Morrow Plots at the University of Illinois Urbana-Champaign. Articles provide mini lessons on the history of the plots and example code for exploration of the data.
 
 ## Installation
 
-You can install the development version of morrowplots from [GitHub](https://github.com/) with:
+(Update on CRAN release!) You can install the **stable** version from
+[CRAN](https://cran.r-project.org/package=morrowplots).
 
-``` r
+```r
+install.packages("morrowplots")
+```
+
+You can install the **development** version [Github](https://github.com/SandiCal/morrowplots):
+
+```{r gh-installation, eval = FALSE}
 # install.packages("devtools")
 devtools::install_github("SandiCal/morrowplots")
 ```
 
-## Example
+## Structure
 
-This is a basic example which shows you how to solve a common problem:
-
-```{r example}
+Data is structured as a dataframe containing 26 variables and 3216 rows in the [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf) format. 
+```{r, layout="l-body-outset"}
 library(morrowplots)
-## basic example code
+library(knitr)
+kable(head(morrowplots))
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+## Variables
 
-```{r cars}
-summary(cars)
+You can view the codebook that describes all variables in the help.
+
+```{r}
+help(morrowplots)
 ```
+
+## - 
+## - 
+## - initial helper text and other notes
+## - *** to delete later ***
+
+Data Package README examples:
+
+BEST - 
+* https://github.com/forestgeo/fgeo.x - repo  
+* https://forestgeo.github.io/fgeo.x/ - page
+
+Others - 
+* https://github.com/hadley/babynames
+* https://github.com/robjhyndman/cricketdata
+
+## - 
+## - 
 
 You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
 
@@ -54,4 +82,4 @@ plot(pressure)
 
 In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hsipxaNGnbc?si=2xIMfY8ndPYl_zSZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hsipxaNGnbc?si=2xIMfY8ndPYl_zSZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen> </iframe>

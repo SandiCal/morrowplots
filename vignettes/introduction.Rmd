@@ -44,6 +44,8 @@ Each plot tests a different crop rotation. Plot 3 grows corn every year. Plot 4 
 
 ![Plot map with crop rotations.](plotmap_simple.png){width=50%}
 
+\
+
 ## Subplots and Soil Treatments
 
 Each of the 3 plots is divided into eight subplots - four Northern subplots (NA, NB, NC, and ND) and four Southern subplots (SA, SB, SC, and SD) - that test different soil treatments, which might commonly be called fertilizers, like manure, limestone, and nitrogen. Some of the subplots have never received any soil treatments. Other subplots have received different treatments over different phases of the experiment. 

@@ -69,33 +69,290 @@
 <div class="page-header"><h1 id="morrowplots">morrowplots<a class="anchor" aria-label="anchor" href="#morrowplots"></a>
 </h1></div>
 <!-- badges: start -->
-<!-- badges: end -->
-<p>The goal of morrowplots is to …</p>
+
+<p>Use morrowplots to load, explore, and analyze nearly 150 years of ag data from the historic Morrow Plots at the University of Illinois Urbana-Champaign. Articles provide mini lessons on the history of the plots and example code for exploration of the data.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of morrowplots from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
+<p>(Update on CRAN release!) You can install the <strong>stable</strong> version from <a href="https://cran.r-project.org/package=morrowplots" class="external-link">CRAN</a>.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"morrowplots"</span><span class="op">)</span></span></code></pre></div>
+<p>You can install the <strong>development</strong> version <a href="https://github.com/SandiCal/morrowplots" class="external-link">Github</a>:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"SandiCal/morrowplots"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+<h2 id="structure">Structure<a class="anchor" aria-label="anchor" href="#structure"></a>
 </h2>
-<p>This is a basic example which shows you how to solve a common problem:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://1heidi.github.io/morrowplots/">morrowplots</a></span><span class="op">)</span></span>
-<span><span class="co">## basic example code</span></span></code></pre></div>
-<p>What is special about using <code>README.Rmd</code> instead of just <code>README.md</code>? You can include R chunks like so:</p>
+<p>Data is structured as a dataframe containing 26 variables and 3216 rows in the <a href="https://vita.had.co.nz/papers/tidy-data.pdf" class="external-link">Tidy Data</a> format.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">cars</span><span class="op">)</span></span>
-<span><span class="co">#&gt;      speed           dist       </span></span>
-<span><span class="co">#&gt;  Min.   : 4.0   Min.   :  2.00  </span></span>
-<span><span class="co">#&gt;  1st Qu.:12.0   1st Qu.: 26.00  </span></span>
-<span><span class="co">#&gt;  Median :15.0   Median : 36.00  </span></span>
-<span><span class="co">#&gt;  Mean   :15.4   Mean   : 42.98  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:19.0   3rd Qu.: 56.00  </span></span>
-<span><span class="co">#&gt;  Max.   :25.0   Max.   :120.00</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://1heidi.github.io/morrowplots/">morrowplots</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/" class="external-link">knitr</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">morrowplots</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<table style="width:100%;" class="table">
+<colgroup>
+<col width="3%">
+<col width="2%">
+<col width="2%">
+<col width="4%">
+<col width="4%">
+<col width="4%">
+<col width="2%">
+<col width="2%">
+<col width="6%">
+<col width="4%">
+<col width="5%">
+<col width="4%">
+<col width="3%">
+<col width="4%">
+<col width="3%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="3%">
+<col width="5%">
+<col width="5%">
+<col width="4%">
+<col width="5%">
+<col width="3%">
+<col width="3%">
+</colgroup>
+<thead><tr class="header">
+<th align="right">phase</th>
+<th align="right">year</th>
+<th align="left">plot</th>
+<th align="right">plot_num</th>
+<th align="left">plot_dir</th>
+<th align="right">rotation</th>
+<th align="left">corn</th>
+<th align="left">crop</th>
+<th align="left">variety</th>
+<th align="left">all_corn</th>
+<th align="right">yield_bush</th>
+<th align="right">yield_ton</th>
+<th align="left">treated</th>
+<th align="left">treatment</th>
+<th align="right">manure</th>
+<th align="right">lime</th>
+<th align="right">nit</th>
+<th align="right">p205</th>
+<th align="right">k20</th>
+<th align="right">stover</th>
+<th align="right">population</th>
+<th align="left">plant_date</th>
+<th align="right">plant_day</th>
+<th align="left">soil_sample</th>
+<th align="left">damage</th>
+<th align="left">notes</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">1888</td>
+<td align="left">3NA</td>
+<td align="right">3</td>
+<td align="left">NW</td>
+<td align="right">1</td>
+<td align="left">TRUE</td>
+<td align="left">CC</td>
+<td align="left">Burr’s White</td>
+<td align="left">FALSE</td>
+<td align="right">54.3</td>
+<td align="right">NA</td>
+<td align="left">FALSE</td>
+<td align="left">none</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">1888-05-04</td>
+<td align="right">125</td>
+<td align="left">FALSE</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1888</td>
+<td align="left">3NB</td>
+<td align="right">3</td>
+<td align="left">NW</td>
+<td align="right">1</td>
+<td align="left">TRUE</td>
+<td align="left">CC</td>
+<td align="left">Burr’s White</td>
+<td align="left">FALSE</td>
+<td align="right">54.3</td>
+<td align="right">NA</td>
+<td align="left">FALSE</td>
+<td align="left">none</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">1888-05-04</td>
+<td align="right">125</td>
+<td align="left">FALSE</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">1888</td>
+<td align="left">3NC</td>
+<td align="right">3</td>
+<td align="left">NE</td>
+<td align="right">1</td>
+<td align="left">TRUE</td>
+<td align="left">CC</td>
+<td align="left">Burr’s White</td>
+<td align="left">FALSE</td>
+<td align="right">54.3</td>
+<td align="right">NA</td>
+<td align="left">FALSE</td>
+<td align="left">none</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">1888-05-04</td>
+<td align="right">125</td>
+<td align="left">FALSE</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1888</td>
+<td align="left">3ND</td>
+<td align="right">3</td>
+<td align="left">NE</td>
+<td align="right">1</td>
+<td align="left">TRUE</td>
+<td align="left">CC</td>
+<td align="left">Burr’s White</td>
+<td align="left">FALSE</td>
+<td align="right">54.3</td>
+<td align="right">NA</td>
+<td align="left">FALSE</td>
+<td align="left">none</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">1888-05-04</td>
+<td align="right">125</td>
+<td align="left">FALSE</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">1888</td>
+<td align="left">3SA</td>
+<td align="right">3</td>
+<td align="left">SW</td>
+<td align="right">1</td>
+<td align="left">TRUE</td>
+<td align="left">CC</td>
+<td align="left">Burr’s White</td>
+<td align="left">FALSE</td>
+<td align="right">54.3</td>
+<td align="right">NA</td>
+<td align="left">FALSE</td>
+<td align="left">none</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">1888-05-04</td>
+<td align="right">125</td>
+<td align="left">FALSE</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1888</td>
+<td align="left">3SB</td>
+<td align="right">3</td>
+<td align="left">SW</td>
+<td align="right">1</td>
+<td align="left">TRUE</td>
+<td align="left">CC</td>
+<td align="left">Burr’s White</td>
+<td align="left">FALSE</td>
+<td align="right">54.3</td>
+<td align="right">NA</td>
+<td align="left">FALSE</td>
+<td align="left">none</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">1888-05-04</td>
+<td align="right">125</td>
+<td align="left">FALSE</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section level2">
+<h2 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
+</h2>
+<p>You can view the codebook that describes all variables in the help.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/help.html" class="external-link">help</a></span><span class="op">(</span><span class="va">morrowplots</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="id_-">-<a class="anchor" aria-label="anchor" href="#id_-"></a>
+</h2>
+</div>
+<div class="section level2">
+<h2 id="id_--1">-<a class="anchor" aria-label="anchor" href="#id_--1"></a>
+</h2>
+</div>
+<div class="section level2">
+<h2 id="id_--initial-helper-text-and-other-notes">- initial helper text and other notes<a class="anchor" aria-label="anchor" href="#id_--initial-helper-text-and-other-notes"></a>
+</h2>
+</div>
+<div class="section level2">
+<h2 id="id_---to-delete-later-">- *** to delete later ***<a class="anchor" aria-label="anchor" href="#id_---to-delete-later-"></a>
+</h2>
+<p>Data Package README examples:</p>
+<p>BEST - * <a href="https://github.com/forestgeo/fgeo.x" class="external-link uri">https://github.com/forestgeo/fgeo.x</a> - repo<br>
+* <a href="https://forestgeo.github.io/fgeo.x/" class="external-link uri">https://forestgeo.github.io/fgeo.x/</a> - page</p>
+<p>Others - * <a href="https://github.com/hadley/babynames" class="external-link uri">https://github.com/hadley/babynames</a> * <a href="https://github.com/robjhyndman/cricketdata" class="external-link uri">https://github.com/robjhyndman/cricketdata</a></p>
+</div>
+<div class="section level2">
+<h2 id="id_--2">-<a class="anchor" aria-label="anchor" href="#id_--2"></a>
+</h2>
+</div>
+<div class="section level2">
+<h2 id="id_--3">-<a class="anchor" aria-label="anchor" href="#id_--3"></a>
+</h2>
 <p>You’ll still need to render <code>README.Rmd</code> regularly, to keep <code>README.md</code> up-to-date. <code>devtools::build_readme()</code> is handy for this.</p>
 <p>You can also embed plots, for example:</p>
 <p><img src="reference/figures/README-pressure-1.png" width="100%"></p>
@@ -130,7 +387,12 @@
 </ul>
 </div>
 
-
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://cran.r-project.org/package=morrowplots" class="external-link"><img src="http://www.r-pkg.org/badges/version/TBD" alt="CRAN_Status_Badge"></a></li>
+</ul>
+</div>
 
   </aside>
 </div>

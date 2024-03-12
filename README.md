@@ -9,9 +9,14 @@
 <!-- badges: end -->
 
 Use morrowplots to load, explore, and analyze nearly 150 years of ag
-data from the historic Morrow Plots at the University of Illinois
-Urbana-Champaign. Articles provide mini lessons on the history of the
-plots and example code for exploration of the data.
+data from the historic [Morrow
+Plots](https://aces.illinois.edu/research/history/morrow-plots) at the
+[University of Illinois Urbana-Champaign](https://illinois.edu/). Data
+collection and formats have evolved over time, and this dataset was
+created to aggregate decades of tabular data (previously in various
+physical and digital forms) into a format compatible with the R
+programming language. Vignettes provide mini lessons on the history of
+the Morrow Plots and example code for exploration of the data.
 
 ## Installation
 

@@ -74,11 +74,12 @@
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://1heidi.github.io/morrowplots/">morrowplots</a></span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co">#library(morrowplots)</span></span></code></pre></div>
 <p><strong>Don’t worry if you don’t know anything about
 agriculture.</strong></p>
 <p><strong>Anyone can use this dataset to learn about data science and
 R.</strong></p>
+<p><br></p>
 <div class="section level2">
 <h2 id="the-experiment">The Experiment<a class="anchor" aria-label="anchor" href="#the-experiment"></a>
 </h2>
@@ -100,6 +101,7 @@ everyone.</p>
 <img src="0006935_cropped.jpg" style="width:75.0%" alt="The Morrow Plots, America’s oldest soil experiment field, circa 1947."><div class="figcaption">The Morrow Plots, America’s oldest soil
 experiment field, circa 1947.</div>
 </div>
+<p><br></p>
 </div>
 <div class="section level2">
 <h2 id="the-dataset">The Dataset<a class="anchor" aria-label="anchor" href="#the-dataset"></a>
@@ -138,6 +140,7 @@ experiment.</p>
 <img src="plotmap_simple_subplots.png" style="width:50.0%" alt="Subplots that test different soil treatments."><div class="figcaption">Subplots that test different soil
 treatments.</div>
 </div>
+<p><br></p>
 </div>
 <div class="section level3">
 <h3 id="yield-and-other-variables">Yield and Other Variables<a class="anchor" aria-label="anchor" href="#yield-and-other-variables"></a>
@@ -145,16 +148,17 @@ treatments.</div>
 <p>Each row of the dataset represents one year of data for one subplot,
 and records observations about the crop planted, the treatments
 employed, and the yields harvested. The key measure is yield, which is
-affected by the rotation and treatment variables. Different crops are
-measured differently, which is why there are two yield columns in the
-dataset - one for bushels and one for tons. Corn is the focus of the
-experiment, and is always measured in bushels. We have included yields
-for the other crops wherever possible, but in some years they weren’t
-recorded because they weren’t considered necessary. Null values like
-these are represented by NAs. There are many NAs in the dataset because
-some extra details - like the corn variety planted and the specific
-amount of treatment applied - were recorded for some years and not
-others. These extra details are included wherever possible.</p>
+recorded as a rate of yield per acre. Different crops are measured
+differently, which is why there are two yield columns in the dataset -
+one for bushels per acre and one for tons per acre. Corn is the focus of
+the experiment, and is always measured in bushels. We have included
+yields for the other crops wherever possible, but in some years they
+weren’t recorded because they weren’t considered necessary. Null values
+like these are represented by NAs. There are many NAs in the dataset
+because some extra details - like the corn variety planted and the
+specific amount of treatment applied - were recorded for some years and
+not others. These extra details are included wherever possible.</p>
+<p><br></p>
 </div>
 </div>
 <div class="section level2">
@@ -183,6 +187,7 @@ stayed at eight subplots since then.</p>
 <div class="float">
 <img src="plotmap_simple_phases.png" style="width:50.0%" alt="How the plots were subdivided over time."><div class="figcaption">How the plots were subdivided over time.</div>
 </div>
+<p><br></p>
 </div>
 <div class="section level3">
 <h3 id="consistency">Consistency<a class="anchor" aria-label="anchor" href="#consistency"></a>

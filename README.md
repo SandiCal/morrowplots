@@ -15,7 +15,7 @@ You can install the development version of morrowplots from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("1heidi/morrowplots")
+devtools::install_github("SandiCal/morrowplots")
 ```
 
 ## Example

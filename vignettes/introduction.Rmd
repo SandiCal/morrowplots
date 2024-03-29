@@ -1,8 +1,8 @@
 ---
-title: "introduction"
+title: "Introduction to the Morrow Plots"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{introduction}
+  %\VignetteIndexEntry{Introduction to the Morrow Plots}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

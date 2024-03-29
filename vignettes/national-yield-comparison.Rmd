@@ -1,8 +1,8 @@
 ---
-title: "national-yield-comparison"
+title: "National Yield Comparison"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{national-yield-comparison}
+  %\VignetteIndexEntry{National Yield Comparison}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -10,7 +10,8 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  error = TRUE
 )
 ```
 
@@ -18,11 +19,12 @@ knitr::opts_chunk$set(
 
 This exercise demonstrates how to use ggplot2 to create a graph comparing corn yields on the Morrow Plots to the U.S. national average. We'll use the data from the Morrow Plots R package, and we'll also download and import national average data from the National Agricultural Statistics Service (NASS).
 
-You will need to install the morrowplots and tidyverse packages if you haven't already.
+In addition to the morrowplots package, this exercise also uses the dplyr and ggplot2 packages.
 
 ```{r setup}
 library(morrowplots)
-library(tidyverse)
+library(dplyr)
+library(ggplot2)
 ```
 
 ## 1. Visualize the Morrow Plots data
@@ -48,14 +50,14 @@ If you look at the Morrow Plots data, you'll see that each plot has multiple row
 mp3 <- 
   
   ## filter to only include rows where 'plot_num' is 3 and 'yield_bush' is not 'NA'
-  filter(morrowplots, plot_num == 3, !is.na(yield_bush))  %>% 
+  dplyr::filter(morrowplots, plot_num == 3, !is.na(yield_bush))  %>% 
 
   ## condense the filtered data and group it first by 'year' and then by 'treated'
-  group_by(year, treated) %>% 
+  dplyr::group_by(year, treated) %>% 
 
   ## calculate the average 'yield_bush' for each grouping
   ## and put that average in a new field called 'mp_ave'
-  summarise(mp_ave = mean(yield_bush))
+  dplyr::summarise(mp_ave = mean(yield_bush))
 
 head(mp3)
 ```
@@ -70,8 +72,8 @@ We can visualize the plot 3 yields in a line graph with 'year' on the x axis and
 
 ```{r mp3 line, fig.width=7}
 
-ggplot(data = mp3) +
-  geom_line(aes(x= year, y = mp_ave, color = treated))
+ggplot2::ggplot(data = mp3) +
+  ggplot2::geom_line(ggplot2::aes(x= year, y = mp_ave, color = treated))
 ```
 
 \
@@ -84,8 +86,8 @@ Try the same parameters with geom_smooth() instead, which creates trend lines th
 
 ```{r mp3 smooth, fig.width=7}
 
-ggplot(data = mp3) +
-  geom_smooth(aes(x= year, y = mp_ave, color = treated))
+ggplot2::ggplot(data = mp3) +
+  ggplot2::geom_smooth(ggplot2::aes(x= year, y = mp_ave, color = treated))
 ```
 
 ## 2. Download and import yield data from NASS
@@ -146,7 +148,7 @@ Read in the csv file and name the imported dataset 'NASS'.
 
 ```{r import NASS}
 
-NASS <- read_csv("NASS_data.csv")
+NASS <- read.csv("NASS_data.csv")
 head(NASS)
 
 ```
@@ -162,11 +164,11 @@ Once NASS is pared down, we'll add the 'nat_ave' variable to the mp3 dataset and
 ```{r add NASS}
 
 ## remove everything from NASS except 'Year' and 'Value'
-NASS <- select(NASS, year = Year, nat_ave = Value)
+NASS <- dplyr::select(NASS, year = Year, nat_ave = Value)
 
 mp3_NASS <-
   mp3 %>% 
-  left_join(NASS, by = "year")
+  dplyr::left_join(NASS, by = "year")
 
 head(mp3_NASS)
 ```
@@ -185,21 +187,21 @@ Since this is our final graph, we can also add a title and subtitle to provide c
 
 ```{r plot both, fig.width=7}
 
-ggplot(data = mp3_NASS) +
+ggplot2::ggplot(data = mp3_NASS) +
   
   ## mp_ave color coded by 'treated'
-  geom_smooth(aes(x= year, y = mp_ave, color = treated))+
+  ggplot2::geom_smooth(ggplot2::aes(x= year, y = mp_ave, color = treated))+
   
   ## add nat_ave as a dashed black line in the same graph
-  geom_smooth(aes(x= year, y = nat_ave), linetype = "dashed", color = "black")+
+  ggplot2::geom_smooth(ggplot2::aes(x= year, y = nat_ave), linetype = "dashed", color = "black")+
   
   ## add title and subtitle
-  labs(title = "Morrow Plots Continuous Corn Yield Trends in Bushels per Acre",
+  ggplot2::labs(title = "Morrow Plots Continuous Corn Yield Trends in Bushels per Acre",
        subtitle = "Compared to the U.S. national average (dashed line)"
        )+
   
   ## add one of the built-in themes
-  theme_light()
+  ggplot2::theme_light()
   
 ```
 
@@ -213,4 +215,4 @@ The untreated continuous corn (that's where corn is grown every single year with
 
 The treated continuous corn rises a lot higher than the untreated yields, but why does it eventually plateau while the national average keeps rising? One reason is the other major variable in the Morrow Plots experiment - crop rotation. Planting corn year after year eventually depletes the soil, even when the soil is treated. This graph only includes data from continuous corn. If you repeat these steps with corn yields from plot 4 or 5, both of which rotate corn with other crops, you'd see that those plots perform better over the long term.
 
-You did it! You combined datasets and graphs, plus you bothered to read through the interpretation, which shows you really care about data. Well done! You deserve a break and a treat.
+You did it! You combined datasets and graphs, plus you bothered to read through the interpretation, which shows you really care about data. Well done!

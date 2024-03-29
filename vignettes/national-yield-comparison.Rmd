@@ -1,5 +1,5 @@
 ---
-title: "National Yield Comparison"
+title: "national-yield-comparison"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{national-yield-comparison}
@@ -10,8 +10,7 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>",
-  rmarkdown.html_vignette.check_title = FALSE
+  comment = "#>"
 )
 ```
 

@@ -1,5 +1,5 @@
 ---
-title: "Introduction to the Morrow Plots"
+title: "introduction"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{introduction}

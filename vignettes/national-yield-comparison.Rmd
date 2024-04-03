@@ -27,6 +27,8 @@ library(dplyr)
 library(ggplot2)
 ```
 
+\
+
 ## 1. Visualize the Morrow Plots data
 
 First, let's take a look at the Morrow Plots data so you can see what we're working with.
@@ -89,6 +91,8 @@ Try the same parameters with geom_smooth() instead, which creates trend lines th
 ggplot2::ggplot(data = mp3) +
   ggplot2::geom_smooth(ggplot2::aes(x= year, y = mp_ave, color = treated))
 ```
+
+\
 
 ## 2. Download and import yield data from NASS
 
@@ -172,6 +176,8 @@ mp3_NASS <-
 
 head(mp3_NASS)
 ```
+
+\
 
 ## 3. Add national data to the Morrow Plots graph
 

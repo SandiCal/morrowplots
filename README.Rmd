@@ -40,7 +40,9 @@ devtools::install_github("SandiCal/morrowplots")
 
 ## Structure
 
-Data is structured as a dataframe containing 26 variables and 3216 rows in the [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf) format. 
+Data is structured as a dataframe in the [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf) format so that each
+variable has its own column, each observation has its own row, and each
+value has its own cell.
 ```{r, layout="l-body-outset"}
 library(morrowplots)
 library(knitr)
@@ -49,38 +51,16 @@ kable(head(morrowplots))
 
 ## Variables
 
-You can view the codebook that describes all variables in the help.
+The codebook that describes all variables is availabel in the help documentation.
 
 ```{r}
 help(morrowplots)
 ```
 
-## - 
-## - 
-## - initial helper text and other notes
-## - *** to delete later ***
-
-Data Package README examples:
-
-BEST - 
-* https://github.com/forestgeo/fgeo.x - repo  
-* https://forestgeo.github.io/fgeo.x/ - page
-
-Others - 
-* https://github.com/hadley/babynames
-* https://github.com/robjhyndman/cricketdata
-
-## - 
-## - 
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
+```{r, echo = F}
+helpfile <- utils:::.getHelpFile(help(morrowplots))
+outfile <- tempfile(fileext = ".html")
+tools:::Rd2HTML(helpfile, out =outfile)
+rawHTML <- paste(readLines(outfile), collapse="\n")
+knitr::asis_output(htmltools::htmlPreserve(rawHTML))
 ```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hsipxaNGnbc?si=2xIMfY8ndPYl_zSZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen> </iframe>

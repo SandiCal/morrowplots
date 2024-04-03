@@ -42,6 +42,7 @@
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
     <a class="dropdown-item" href="../articles/introduction.html">Introduction to the Morrow Plots</a>
+    <a class="dropdown-item" href="../articles/morrow-plots-data-visualizations.html">Morrow Plots Data Visualizations</a>
     <a class="dropdown-item" href="../articles/national-yield-comparison.html">National Yield Comparison</a>
   </div>
 </li>
@@ -97,6 +98,7 @@ dplyr and ggplot2 packages.</p>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;     intersect, setdiff, setequal, union</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
+<p><br></p>
 </div>
 <div class="section level2">
 <h2 id="visualize-the-morrow-plots-data">1. Visualize the Morrow Plots data<a class="anchor" aria-label="anchor" href="#visualize-the-morrow-plots-data"></a>
@@ -190,6 +192,7 @@ data.</p>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html" class="external-link">geom_smooth</a></span><span class="op">(</span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x<span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">mp_ave</span>, color <span class="op">=</span> <span class="va">treated</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; `geom_smooth()` using method = 'loess' and formula = 'y ~ x'</span></span></code></pre></div>
 <p><img src="national-yield-comparison_files/figure-html/mp3%20smooth-1.png" width="672"></p>
+<p><br></p>
 </div>
 <div class="section level2">
 <h2 id="download-and-import-yield-data-from-nass">2. Download and import yield data from NASS<a class="anchor" aria-label="anchor" href="#download-and-import-yield-data-from-nass"></a>
@@ -307,6 +310,7 @@ dataset and match the data up by ‘year’.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>  <span style="text-decoration: underline;">1</span>891 FALSE     28.6    29.6</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>  <span style="text-decoration: underline;">1</span>892 FALSE     33.1    24.7</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span>  <span style="text-decoration: underline;">1</span>893 FALSE     21.7    23.8</span></span></code></pre></div>
+<p><br></p>
 </div>
 <div class="section level2">
 <h2 id="add-national-data-to-the-morrow-plots-graph">3. Add national data to the Morrow Plots graph<a class="anchor" aria-label="anchor" href="#add-national-data-to-the-morrow-plots-graph"></a>

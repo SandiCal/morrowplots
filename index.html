@@ -90,7 +90,7 @@
 <div class="section level2">
 <h2 id="structure">Structure<a class="anchor" aria-label="anchor" href="#structure"></a>
 </h2>
-<p>Data is structured as a dataframe containing 26 variables and 3216 rows in the <a href="https://vita.had.co.nz/papers/tidy-data.pdf" class="external-link">Tidy Data</a> format.</p>
+<p>Data is structured as a dataframe in the <a href="https://vita.had.co.nz/papers/tidy-data.pdf" class="external-link">Tidy Data</a> format so that each variable has its own column, each observation has its own row, and each value has its own cell.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://sandical.github.io/morrowplots/" class="external-link">morrowplots</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/" class="external-link">knitr</a></span><span class="op">)</span></span>
@@ -327,43 +327,292 @@
 <div class="section level2">
 <h2 id="variables">Variables<a class="anchor" aria-label="anchor" href="#variables"></a>
 </h2>
-<p>You can view the codebook that describes all variables in the help.</p>
+<p>You can view the codebook that describes all variables in the help documentation.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/help.html" class="external-link">help</a></span><span class="op">(</span><span class="va">morrowplots</span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="id_-">-<a class="anchor" aria-label="anchor" href="#id_-"></a>
+&lt;!DOCTYPE html&gt;
+
+
+<title>
+R: Morrow Plots Yield and Treatment Data
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+<script type="text/javascript">
+const macros = { "\\R": "\\textsf{R}", "\\code": "\\texttt"};
+function processMathHTML() {
+    var l = document.getElementsByClassName('reqn');
+    for (let e of l) { katex.render(e.textContent, e, { throwOnError: false, macros }); }
+    return;
+}</script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" onload="processMathHTML();"></script><link rel="stylesheet" type="text/css" href="R.css">
+<div class="container">
+
+
+<table style="width: 100%;" class="table"><tr>
+<td>
+morrowplots
+</td>
+<td style="text-align: right;">
+R Documentation
+</td>
+</tr></table>
+<h2 id="morrowplots">
+Morrow Plots Yield and Treatment Data
 </h2>
+
+
+<h3>
+Description
+</h3>
+
+
+<p>
+Yield and treatment data for the historic Morrow Plots at the University of Illinois at Urbana Champaign from 1888–2021.
+</p>
+
+
+<h3>
+Usage
+</h3>
+
+
+<pre><code class="language-R"><span><span class="va">morrowplots</span></span></code></pre>
+
+
+<h3>
+Format
+</h3>
+
+
+<p>
+A dataframe containing 26 variables and 3216 rows.
+</p>
+
+
+<dl>
+<dt>
+phase
+</dt>
+<dd>
+<p>
+An integer between 1-5 that describes the important stages of the experiment when plot size, crop rotation or treatments changed.
+</p>
+</dd>
+<dt>
+year
+</dt>
+<dd>
+<p>
+Date in YYYY format for year crops were planted and harvested.
+</p>
+</dd>
+<dt>
+plot
+</dt>
+<dd>
+<p>
+Character string that indicates the plot number, North/South location, and A/B/C/D subplot (see Data Sources section above for an important note about plot names); values are 3NA; 3NB; 3NC; 3ND; 3SA; 3SB; 3SC; 3SD; 4NA; 4NB; 4NC; 4ND; 4SA; 4SB; 4SC; 4SD; 5NA; 5NB; 5NC; 5ND; 5SA; 5SB; 5SC; 5SD
+</p>
+</dd>
+<dt>
+plot_num
+</dt>
+<dd>
+<p>
+Integer of 3, 4, or 5 for the plot number without subplot indicators.
+</p>
+</dd>
+<dt>
+plot_dir
+</dt>
+<dd>
+<p>
+Character string that indicates the north/south and east/west direction; values are NE, NW, SE, or SW.
+</p>
+</dd>
+<dt>
+rotation
+</dt>
+<dd>
+<p>
+An integer of 1, 2, or 3 that describes the year in the crop rotation schedule.
+</p>
+</dd>
+<dt>
+corn
+</dt>
+<dd>
+<p>
+A true or false variable to make it easy to group corn in rotation and continuous corn.
+</p>
+</dd>
+<dt>
+crop
+</dt>
+<dd>
+<p>
+Character string that for the crop planted with separate values for corn in rotation and continuous corn; values are A (alfalfa), C (corn), CC (continuous corn), H (hay), O (oats), or S (soybean).
+</p>
+</dd>
+<dt>
+variety
+</dt>
+<dd>
+<p>
+Character string with free text of the crop variety name.
+</p>
+</dd>
+<dt>
+all_corn
+</dt>
+<dd>
+<p>
+A true or false variable indicating whether this was a year when corn was planted in all plots.
+</p>
+</dd>
+<dt>
+yield_bush
+</dt>
+<dd>
+<p>
+Integer value of yeilds for all crops except hay in bushels/acre.
+</p>
+</dd>
+<dt>
+yield_ton
+</dt>
+<dd>
+<p>
+Integer value of yeild of hay in tons/acre.
+</p>
+</dd>
+<dt>
+treated
+</dt>
+<dd>
+<p>
+A true or false variable indicating whether or not this plot was treated that year.
+</p>
+</dd>
+<dt>
+treatment
+</dt>
+<dd>
+<p>
+Character string that describes the treatment plan for this plot; values are none, MLrP, MLbP, 0LNsPK, MLrPNsPK, LNPK, LHNPK, or MLP.
+</p>
+</dd>
+<dt>
+manure
+</dt>
+<dd>
+<p>
+An integer for the specific amount of manure applied to this plot this year in lbs/acre.
+</p>
+</dd>
+<dt>
+lime
+</dt>
+<dd>
+<p>
+An integer for the specific amount of lime applied to this plot this year in tons/acre
+</p>
+</dd>
+<dt>
+nit
+</dt>
+<dd>
+<p>
+An integer for the specific amount of nitrogen applied to this plot this year in lbs/acre.
+</p>
+</dd>
+<dt>
+p205
+</dt>
+<dd>
+<p>
+An integer for the specific amount of phosphorus (on an oxide basis) applied to this plot this year in lbs/acre.
+</p>
+</dd>
+<dt>
+k20
+</dt>
+<dd>
+<p>
+An integer for the specific amount of potassium (on an oxide basis) applied to this plot this year in lbs/acre.
+</p>
+</dd>
+<dt>
+stover
+</dt>
+<dd>
+<p>
+An integer for the amount of stover or straw removed in tons/acre.
+</p>
+</dd>
+<dt>
+population
+</dt>
+<dd>
+<p>
+An integer for the number of plants based on counts from hand harvesting in plants/acre.
+</p>
+</dd>
+<dt>
+plant_date
+</dt>
+<dd>
+<p>
+Date the crop was planted in MM/DD/YYYY format.
+</p>
+</dd>
+<dt>
+plant_day
+</dt>
+<dd>
+<p>
+An integer that indicates the nth day in the year that the crop was planted.
+</p>
+</dd>
+<dt>
+soil_sample
+</dt>
+<dd>
+<p>
+A true or false variable that indicates whether there is at least one soil sample for this plot and year.
+</p>
+</dd>
+<dt>
+damage
+</dt>
+<dd>
+<p>
+Character string with free text describing known sources of significant damage to crops that year.
+</p>
+</dd>
+<dt>
+notes
+</dt>
+<dd>
+<p>
+Character string with free text for any notes that do not fit in other fields.
+</p>
+</dd>
+</dl>
+<h3>
+Source
+</h3>
+
+
+<p>
+Published dataset in the Illinios Data Bank <a href="https://doi.org/10.13012/B2IDB-7865141_V1" class="external-link">https://doi.org/10.13012/B2IDB-7865141_V1</a>
+</p>
+<p>
+</p>
 </div>
-<div class="section level2">
-<h2 id="id_--1">-<a class="anchor" aria-label="anchor" href="#id_--1"></a>
-</h2>
-</div>
-<div class="section level2">
-<h2 id="id_--initial-helper-text-and-other-notes">- initial helper text and other notes<a class="anchor" aria-label="anchor" href="#id_--initial-helper-text-and-other-notes"></a>
-</h2>
-</div>
-<div class="section level2">
-<h2 id="id_---to-delete-later-">- *** to delete later ***<a class="anchor" aria-label="anchor" href="#id_---to-delete-later-"></a>
-</h2>
-<p>Data Package README examples:</p>
-<p>BEST - * <a href="https://github.com/forestgeo/fgeo.x" class="external-link uri">https://github.com/forestgeo/fgeo.x</a> - repo<br>
-* <a href="https://forestgeo.github.io/fgeo.x/" class="external-link uri">https://forestgeo.github.io/fgeo.x/</a> - page</p>
-<p>Others - * <a href="https://github.com/hadley/babynames" class="external-link uri">https://github.com/hadley/babynames</a> * <a href="https://github.com/robjhyndman/cricketdata" class="external-link uri">https://github.com/robjhyndman/cricketdata</a></p>
-</div>
-<div class="section level2">
-<h2 id="id_--2">-<a class="anchor" aria-label="anchor" href="#id_--2"></a>
-</h2>
-</div>
-<div class="section level2">
-<h2 id="id_--3">-<a class="anchor" aria-label="anchor" href="#id_--3"></a>
-</h2>
-<p>You’ll still need to render <code>README.Rmd</code> regularly, to keep <code>README.md</code> up-to-date. <code>devtools::build_readme()</code> is handy for this.</p>
-<p>You can also embed plots, for example:</p>
-<p><img src="reference/figures/README-pressure-1.png" width="100%"></p>
-<p>In that case, don’t forget to commit and push the resulting figure files, so they display on GitHub and CRAN.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hsipxaNGnbc?si=2xIMfY8ndPYl_zSZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-</iframe>
+
+
 </div>
 </div>
   </main><aside class="col-md-3"><div class="license">
@@ -396,6 +645,7 @@
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://cran.r-project.org/package=morrowplots" class="external-link"><img src="http://www.r-pkg.org/badges/version/TBD" alt="CRAN_Status_Badge"></a></li>
+<li><a href="https://github.com/SandiCal/morrowplots/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/SandiCal/morrowplots/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
 </ul>
 </div>
 

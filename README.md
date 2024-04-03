@@ -60,7 +60,7 @@ kable(head(morrowplots))
 
 ## Variables
 
-You can view the codebook that describes all variables in the help
+The codebook that describes all variables is availabel in the help
 documentation.
 
 ``` r

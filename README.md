@@ -60,7 +60,7 @@ kable(head(morrowplots))
 
 ## Variables
 
-The codebook that describes all variables is availabel in the help
+The codebook that describes all variables is available in the help
 documentation.
 
 ``` r
@@ -94,7 +94,7 @@ University of Illinois at Urbana Champaign from 1888&ndash;2021.
 </code></pre>
 &#10;
 <h3>Format</h3>
-&#10;<p>A dataframe containing 26 variables and 3216 rows.
+&#10;<p>A dataframe containing 26 variables and 3216 rows with the following variables:
 </p>
 &#10;<dl>
 <dt>phase</dt><dd><p>An integer between 1-5 that describes the important stages of the experiment when plot size, crop rotation or treatments changed.</p>
@@ -152,7 +152,7 @@ University of Illinois at Urbana Champaign from 1888&ndash;2021.
 </dl>
 &#10;
 &#10;<h3>Source</h3>
-&#10;<p>Published dataset in the Illinios Data Bank <a href="https://doi.org/10.13012/B2IDB-7865141_V1">https://doi.org/10.13012/B2IDB-7865141_V1</a>
+&#10;<p>Published dataset in the Illinios Data Bank doi.org/10.13012/B2IDB-7865141_V1
 </p>
 &#10;
 </div>

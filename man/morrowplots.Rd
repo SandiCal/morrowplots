@@ -5,7 +5,7 @@
 \alias{morrowplots}
 \title{Morrow Plots Yield and Treatment Data}
 \format{
-A dataframe containing 26 variables and 3216 rows with the following variables:
+A dataframe containing and 3216 rows with the following 26 variables:
 \describe{
 \item{phase}{An integer between 1-5 that describes the important stages of the experiment when plot size, crop rotation or treatments changed.}
 \item{year}{Date in YYYY format for year crops were planted and harvested.}

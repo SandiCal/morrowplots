@@ -43,6 +43,7 @@ devtools::install_github("SandiCal/morrowplots")
 Data is structured as a dataframe in the [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf) format so that each
 variable has its own column, each observation has its own row, and each
 value has its own cell.
+
 ```{r, layout="l-body-outset"}
 library(morrowplots)
 library(knitr)
@@ -56,7 +57,8 @@ The codebook that describes all variables is available in the help documentation
 ```{r}
 help(morrowplots)
 ```
-
+ 
+For example: 
 ```{r, echo = F, results = "asis"}
 help_console <- function(topic, format=c("text", "html", "latex", "Rd"),
                          lines=NULL, before=NULL, after=NULL) {  

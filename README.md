@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# morrowplots
+# morrowplots <a href="https://SandiCal.github.io/morrowplots/"><img src="man/figures/logo.png" align="right" height="138" alt="morrowplots website" /></a>
 
 <!-- badges: start -->
 
@@ -65,6 +65,7 @@ documentation.
 
 ``` r
 help(morrowplots)
+#> starting httpd help server ... done
 ```
 
 <dl>

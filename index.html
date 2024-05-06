@@ -81,7 +81,7 @@
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>(Update on CRAN release!) You can install the <strong>stable</strong> version from <a href="https://cran.r-project.org/package=morrowplots" class="external-link">CRAN</a>.</p>
+<p>You can install the <strong>stable</strong> version from <a href="https://cran.r-project.org/package=morrowplots" class="external-link">CRAN</a>.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"morrowplots"</span><span class="op">)</span></span></code></pre></div>
 <p>You can install the <strong>development</strong> version <a href="https://github.com/SandiCal/morrowplots" class="external-link">Github</a>:</p>
@@ -94,9 +94,10 @@
 </h2>
 <p>Data is structured as a dataframe in the <a href="https://vita.had.co.nz/papers/tidy-data.pdf" class="external-link">Tidy Data</a> format so that each variable has its own column, each observation has its own row, and each value has its own cell.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://sandical.github.io/morrowplots/" class="external-link">morrowplots</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="co">## preview first 12 rows of data</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://sandical.github.io/morrowplots/" class="external-link">morrowplots</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/" class="external-link">knitr</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">morrowplots</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="va">morrowplots</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">12</span>, <span class="op">]</span><span class="op">)</span></span></code></pre></div>
 <table style="width:100%;" class="table">
 <colgroup>
 <col width="3%">
@@ -323,6 +324,174 @@
 <td align="left">NA</td>
 <td align="left">NA</td>
 </tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">1888</td>
+<td align="left">3SC</td>
+<td align="right">3</td>
+<td align="left">SE</td>
+<td align="right">1</td>
+<td align="left">TRUE</td>
+<td align="left">CC</td>
+<td align="left">Burr’s White</td>
+<td align="left">FALSE</td>
+<td align="right">54.3</td>
+<td align="right">NA</td>
+<td align="left">FALSE</td>
+<td align="left">none</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">1888-05-04</td>
+<td align="right">125</td>
+<td align="left">FALSE</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1888</td>
+<td align="left">3SD</td>
+<td align="right">3</td>
+<td align="left">SE</td>
+<td align="right">1</td>
+<td align="left">TRUE</td>
+<td align="left">CC</td>
+<td align="left">Burr’s White</td>
+<td align="left">FALSE</td>
+<td align="right">54.3</td>
+<td align="right">NA</td>
+<td align="left">FALSE</td>
+<td align="left">none</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">1888-05-04</td>
+<td align="right">125</td>
+<td align="left">FALSE</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">1888</td>
+<td align="left">4NA</td>
+<td align="right">4</td>
+<td align="left">NW</td>
+<td align="right">2</td>
+<td align="left">TRUE</td>
+<td align="left">C</td>
+<td align="left">Burr’s White</td>
+<td align="left">FALSE</td>
+<td align="right">49.5</td>
+<td align="right">NA</td>
+<td align="left">FALSE</td>
+<td align="left">none</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">1888-05-04</td>
+<td align="right">125</td>
+<td align="left">FALSE</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1888</td>
+<td align="left">4NB</td>
+<td align="right">4</td>
+<td align="left">NW</td>
+<td align="right">2</td>
+<td align="left">TRUE</td>
+<td align="left">C</td>
+<td align="left">Burr’s White</td>
+<td align="left">FALSE</td>
+<td align="right">49.5</td>
+<td align="right">NA</td>
+<td align="left">FALSE</td>
+<td align="left">none</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">1888-05-04</td>
+<td align="right">125</td>
+<td align="left">FALSE</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">1888</td>
+<td align="left">4NC</td>
+<td align="right">4</td>
+<td align="left">NE</td>
+<td align="right">2</td>
+<td align="left">TRUE</td>
+<td align="left">C</td>
+<td align="left">Burr’s White</td>
+<td align="left">FALSE</td>
+<td align="right">49.5</td>
+<td align="right">NA</td>
+<td align="left">FALSE</td>
+<td align="left">none</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">1888-05-04</td>
+<td align="right">125</td>
+<td align="left">FALSE</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1888</td>
+<td align="left">4ND</td>
+<td align="right">4</td>
+<td align="left">NE</td>
+<td align="right">2</td>
+<td align="left">TRUE</td>
+<td align="left">C</td>
+<td align="left">Burr’s White</td>
+<td align="left">FALSE</td>
+<td align="right">49.5</td>
+<td align="right">NA</td>
+<td align="left">FALSE</td>
+<td align="left">none</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">1888-05-04</td>
+<td align="right">125</td>
+<td align="left">FALSE</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -332,7 +501,7 @@
 <p>The codebook that describes all variables is available in the help documentation.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/help.html" class="external-link">help</a></span><span class="op">(</span><span class="va">morrowplots</span><span class="op">)</span></span></code></pre></div>
-<p>For example:</p>
+<p>Including:</p>
 <dl>
 <dt>
 phase

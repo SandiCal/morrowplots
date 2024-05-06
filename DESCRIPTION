@@ -29,4 +29,5 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
-URL: https://sandical.github.io/morrowplots/
+URL: https://SandiCal.github.io/morrowplots/, https://github.com/SandiCal/morrowplots
+BugReports: https://github.com/SandiCal/morrowplots/issues

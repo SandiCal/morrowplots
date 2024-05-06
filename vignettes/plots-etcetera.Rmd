@@ -2,7 +2,7 @@
 title: "Plots Etcetera"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Plots Extras}
+  %\VignetteIndexEntry{Plots Etcetera}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

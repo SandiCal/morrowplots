@@ -1,4 +1,3 @@
-# morrowplots v0.0.9000 (2024-03-05)
+# morrowplots v0.1.0 (2024-05-06)
 
-## Notes
 * Initial CRAN submission.

@@ -27,7 +27,13 @@ library(morrowplots)
 
 # The Experiment 
 
-Established in 1876, the Morrow Plots at the University of Illinois Urbana Champaign are the longest-running continuous agricultural fields in the Americas. They test the impact of soil treatments and crop rotation on corn, Illinois's most important crop. Data collection began in 1888 and has recorded planting, treatment, and yield data annually since then. 
+Established in 1876, the Morrow Plots at the University of Illinois Urbana Champaign are the longest-running continuous agricultural fields in the Americas. They test the impact of soil treatments and crop rotation on corn, Illinois's most important crop. Data collection began in 1888 and has recorded planting, treatment, and yield data annually since then.
+
+\
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12206.811718411547!2d-88.23526687085335!3d40.10433587459286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880cd716231139f5%3A0x2f0f6d23ae90f56b!2sMorrow%20Plots!5e0!3m2!1sen!2sus!4v1714768356406!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-external="1"></iframe>
+
+\
 
 Experiments like this one are essential for testing how common farming practices gradually impact soils and crops over several decades. Annual weather patterns can also have a big impact on crops, and the long timescale helps control for those weather-related variations from year to year. If you're using this dataset to learn about data science, the long-term nature of the experiment means there's enough data to explore trends, outliers, phases, and facets. There's something here for everyone.
 
@@ -86,6 +92,8 @@ This experiment is still ongoing, and new data will be added to this package in 
 # More Information
 
 **For links to other resources about the Morrow Plots, see the [Illinois Data Bank](https://doi.org/10.13012/B2IDB-7865141_V1).**
+
+Image from the [University of Illinois Archives](https://archon.library.illinois.edu/archives/index.php?p=digitallibrary/digitalcontent&id=8607)
 
 
 

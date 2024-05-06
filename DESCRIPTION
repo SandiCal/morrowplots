@@ -1,5 +1,5 @@
 Package: morrowplots
-Title: Historical Agricultural Data of the University of Illinois
+Title: Historical Agricultural Data from the University of Illinois
 Version: 0.0.0.9000
 Authors@R: c(
    	person("Sandi", "Caldrone", email = "caldron2@illinois.edu", 
@@ -10,12 +10,9 @@ Authors@R: c(
 	  comment = c(ORCID = "0000-0002-7826-5960")),
     person("Brooke", "Anderson", 
     email = "brooke.anderson@colostate.edu", role = "ctb"))
-Description: The Morrow Plots dataset compiled from available primary and 
-    secondary sources includes planting, treatment, and yield data recorded for
-    the plots numbered (3,4,5) which are the three plots that remain from the 
-    original 1876 experiment. The dataset contains records from the years 
-    1888-2021. Not all variables were recorded for all years. Missing values are
-    represented with NA.
+Description: Agricultural data for 1888-2021 from the Morrow Plots at the 
+    University of Illinois, the world's second longest agricultural experiment, 
+    which measures the impact of crop rotation and fertility treatments on corn.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

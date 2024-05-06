@@ -17,11 +17,11 @@ knitr::opts_chunk$set(
 
 ## How do corn yields at the Morrow Plots compare to the national average?
 
-This exercise demonstrates how to use ggplot2 to create a graph comparing corn yields on the Morrow Plots to the U.S. national average. We'll use the data from the Morrow Plots R package, and we'll also download and import national average data from the National Agricultural Statistics Service (NASS).
+This exercise demonstrates how to use ggplot2 to create a graph comparing corn yields on the Morrow Plots to the U.S. national average. We'll use the data from the morrowplots R package, and we'll also download and import national average data from the National Agricultural Statistics Service (NASS).
 
 In addition to the morrowplots package, this exercise also uses the dplyr and ggplot2 packages.
 
-```{r setup}
+```{r setup, message=FALSE}
 library(morrowplots)
 library(dplyr)
 library(ggplot2)
@@ -41,7 +41,7 @@ head(morrowplots)
 
 **1.1 Import and subset the Morrow Plots data**
 
-We'll be visualizing the corn yield data in the 'yield_bush' variable, but before we can compare corn yields, we need to narrow down the dataset. Plots 4 and 5 grow corn every 2 to 3 years, but plot 3 grows corn every year, so for the purposes of this exercise, we'll create a new subset of just data from plot 3. 
+We'll be visualizing the corn yield data in the 'yield_bush' variable, but before we can compare corn yields, we need to narrow down the dataset. Plots 4 and 5 grow corn every 2 to 3 years, but plot 3 grows corn every year, so for the purposes of this exercise, we'll create a new subset of data from plot 3 only. 
 
 We also have a few years where 'yield_bush' data is missing and marked with 'NA'. We can filter those out too so they don't show up in our visualizations.
 
@@ -94,72 +94,59 @@ ggplot2::ggplot(data = mp3) +
 
 \
 
-## 2. Download and import yield data from NASS
-
 Much smoother! Notice how the axes of the two graphs differ. R automatically adjusts axes, so keep that in mind when comparing graphs.
 
 Now that we know what the corn yield trends from plot 3 look like, we can add in national averages for comparison.
 
-\
+## 2. Get yield data from NASS
 
-**2.1 Filter NASS data using parameters** 
+For this exercise, we're using data downloaded from the NASS website. (Alternatively, you could use the NASS API to import data directly into R, but that requires registration. For our purposes, working from a file is easier.)
 
-For this exercise, we'll manually download national corn yield data from NASS. (Alternatively, there is a way to import it directly into R with code, but that requires registering with NASS to get an API key. For our purposes, downloading it manually is easier.)
+**2.1 Combine NASS and mp3 data (choose 1 option)**
 
-To download NASS data manually, go to the [NASS Quick Stats webpage](https://quickstats.nass.usda.gov/). You should see dataset parameters similar to those pictured below. 
+You have two options for NASS data. You can either use this as an opportunity to learn how to use NASS and download the data yourself, or you can use the copy that's saved in the morrowplots GitHub repository.
 
-Note: some parameters won't appear until you make a selection in the preceding parameter.
+**Option 1: Download NASS data yourself**
 
-![NASS Parameters](NASS_parameters.png){width=100%}
+To download the NASS data, go to the [NASS Quick Stats webpage](https://quickstats.nass.usda.gov/) and follow the steps in the video below. 
 
-\
-
-For Commodity parameters select:
-
-* Program: SURVEY
-* Sector: CROPS
-* Group: FIELD CROPS
-* Commodity: CORN
-* Category: YIELD
-* Data Item: CORN, GRAIN - YIELD, MEASURED IN BU/ACRE
-* Domain: TOTAL
-
-For Location parameters select:
-
-* Geographic Level: NATIONAL
-* State: US TOTAL
-
-For Time parameters select:
-
-* Year: 1888-2021 (select 2021, hold Shift and select 1888)
-* Period: YEAR
-
-Click the 'Get Data' button. The resulting dataset should have 134 rows and look like this.
-
-![NASS Results](NASS_results.png){width=100%}
+<iframe id="kmsembed-1_l2vy5yng" width="640" height="394" src="https://mediaspace.illinois.edu/embed/secure/iframe/entryId/1_l2vy5yng/uiConfId/26883701/st/0" class="kmsembed" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" referrerPolicy="no-referrer-when-downgrade" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="How to Download NASS Data"></iframe>
 
 \
 
-In the upper right, click 'Spreadsheet' to download the data as a csv.
+NASS will give your file a super long name, so rename it "NASS_data.csv" instead. Then you need to make sure R knows where to find it, which you can do in one of two ways:
 
-Once downloaded, rename it something sensible like 'NASS_data.csv' and put it in your working directory for R.
+1) You can move the NASS file to your working directory. In your R console, use getwd() to identify your working directory and then manually move the file to that folder. 
 
-\
+2) Or, you can add a file path to read.csv() to tell R where the file is. In your R console, use file.choose(), which will pull up a window that will let you navigate to your NASS file. R will print your file path, which you can then add to the read.csv() code below. For guidance, see this [step-by-step example](https://www.statology.org/r-file-choose/).
 
-**2.2 Import NASS data into R**
 
-Read in the csv file and name the imported dataset 'NASS'.
+```{r import NASS file}
 
-```{r import NASS}
+## only run this code if you chose Option 1: Download NASS data yourself
+## delete the ## before NASS below to activate the code
+## if your NASS file is not in your working directory, insert the file path before the file name
 
-NASS <- read.csv("NASS_data.csv")
-head(NASS)
+## NASS <- read.csv("NASS_data.csv")
 
 ```
 
 \
 
-**2.3 Combine NASS and mp3 data**
+**Option 2: Get NASS data from GitHub**
+
+If you feel like you already have plenty of work to do and don't want to learn how to use NASS, that's ok. You can use the copy of the NASS data that's in the morrowplots GitHub repository.
+
+```{r get NASS data from github}
+
+## do not run this code chunk if you chose option 1: Download NASS data yourself
+NASS <- read.csv("https://github.com/SandiCal/morrowplots/raw/main/vignettes/NASS_data.csv")
+
+```
+
+\
+
+**2.2 Combine NASS and mp3 data**
 
 The NASS data contains a whole bunch of stuff we don't need, so first we'll pare it down to just 'Year' and 'Value'. While we're doing that, we'll also rename the NASS variables. We'll change 'Year' to 'year' so it matches the variable in mp3 exactly (we need that for the next step), and we'll change 'Value' to 'nat_ave' for national average.
 
@@ -170,6 +157,7 @@ Once NASS is pared down, we'll add the 'nat_ave' variable to the mp3 dataset and
 ## remove everything from NASS except 'Year' and 'Value'
 NASS <- dplyr::select(NASS, year = Year, nat_ave = Value)
 
+## join mp3 and NASS data by 'year'
 mp3_NASS <-
   mp3 %>% 
   dplyr::left_join(NASS, by = "year")
@@ -181,7 +169,7 @@ head(mp3_NASS)
 
 ## 3. Add national data to the Morrow Plots graph
 
-You should now have NASS and mp3_NASS datasets in your R environment. You may pause here to perform the celebratory dance of your choice.
+You should now have NASS and mp3_NASS datasets in your R environment. 
 
 \
 
@@ -215,10 +203,10 @@ ggplot2::ggplot(data = mp3_NASS) +
 
 **3.2 Interpreting the Results**
 
-Now that you have a combined graph, how does the data compare?
+Now that you have a combined graph, how do the data compare?
 
-The untreated continuous corn (that's where corn is grown every single year with no fertilizing treatments) starts out performing slightly better than the national average, but starts to dip over time as the untreated soil is depleted. Even so, Illinois soil is so rich that the untreated corn is pretty similar to the national average until the late 1930's when the national average starts to rise up and break away. Why is that? One reason is that around that time, hybrid corn was introduced, and it performed better than previously popular corn breeds. Hybrid corn was introduced into the Morrow Plots in 1937, which is one reason why we see both the treated and untreated yields start to rise after that.
+The untreated continuous corn (that's where corn is grown every single year with no fertilizing treatments) starts out performing slightly better than the national average, but begins to dip over time as the untreated soil is depleted. Even so, Illinois soil is so rich that the untreated corn is pretty similar to the national average until the late 1930's when the national average starts to rise up and break away. Why is that? One reason is that around that time, hybrid corn was introduced, and it performed better than previously popular corn breeds. Hybrid corn was introduced into the Morrow Plots in 1937, which is one reason why we see both the treated and untreated yields start to rise after that.
 
 The treated continuous corn rises a lot higher than the untreated yields, but why does it eventually plateau while the national average keeps rising? One reason is the other major variable in the Morrow Plots experiment - crop rotation. Planting corn year after year eventually depletes the soil, even when the soil is treated. This graph only includes data from continuous corn. If you repeat these steps with corn yields from plot 4 or 5, both of which rotate corn with other crops, you'd see that those plots perform better over the long term.
 
-You did it! You combined datasets and graphs, plus you bothered to read through the interpretation, which shows you really care about data. Well done!
+You did it! You combined datasets and graphs, plus you bothered to read through the interpretation, which proves you really care about data. Well done!

@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 
 ## How do corn yields at the Morrow Plots compare to the national average?
 
-This exercise demonstrates how to use ggplot2 to create a graph comparing corn yields on the Morrow Plots to the U.S. national average. We'll use the data from the morrowplots R package, and we'll also download and import national average data from the National Agricultural Statistics Service (NASS).
+This exercise demonstrates how to use ggplot2 to create a graph comparing corn yields on the Morrow Plots to the U.S. national average. We'll use the data from the morrowplots R package, and we'll also import national average data from the National Agricultural Statistics Service (NASS).
 
 In addition to the morrowplots package, this exercise also uses the dplyr and ggplot2 packages.
 
@@ -41,11 +41,11 @@ head(morrowplots)
 
 **1.1 Import and subset the Morrow Plots data**
 
-We'll be visualizing the corn yield data in the 'yield_bush' variable, but before we can compare corn yields, we need to narrow down the dataset. Plots 4 and 5 grow corn every 2 to 3 years, but plot 3 grows corn every year, so for the purposes of this exercise, we'll create a new subset of data from plot 3 only. 
+We'll be visualizing the corn yield data in the 'yield_bush' variable, but before we can compare corn yields, we need to narrow down the dataset. Plots 4 and 5 grow corn every 2 to 3 years, but plot 3 grows corn every year. For the purposes of this exercise, we'll create a new subset of data from plot 3 only, but you could repeat these steps with Plots 4 and 5.
 
 We also have a few years where 'yield_bush' data is missing and marked with 'NA'. We can filter those out too so they don't show up in our visualizations.
 
-If you look at the Morrow Plots data, you'll see that each plot has multiple rows of data for each year. That's because each plot has subplots. Some subplots receive fertilizing treatments and some don't. This is recorded in the TRUE/FALSE 'treated' variable. For our purposes, we want the annual average yield, and because treatments affect yield, we'll calculate two annual averages - one for treated subplots and one for untreated subplots. None of the subplots received treatments from 1888 to 1903, so those years will only have one average for untreated subplots.  
+If you look at the Morrow Plots data, you'll see that each plot has multiple rows of data for each year. That's because each plot has subplots. Some subplots receive fertility treatments and some don't. This is recorded in the TRUE/FALSE 'treated' variable. For our purposes, we want the annual average yield, and because treatments affect yield, we'll calculate two annual averages - one for treated subplots and one for untreated subplots. None of the subplots received treatments from 1888 to 1903, so those years will only have one average for untreated subplots.  
 
 ```{r subset}
 ## name the new dataset mp3 for plot 3
@@ -68,7 +68,7 @@ head(mp3)
 
 **1.2 Create a line graph for plot 3**
 
-Now you should have a dataset called 'mp3' in your R environment, which contains annual averages for treated and untreated corn in plot 3. Huzzah!
+Now you should have a dataset called 'mp3' in your R environment, which contains annual averages for treated and untreated corn in plot 3.
 
 We can visualize the plot 3 yields in a line graph with 'year' on the x axis and 'mp_ave' on the y axis. We'll use the 'treated' variable to plot treated and untreated corn with different colors.  
 
@@ -139,7 +139,7 @@ If you feel like you already have plenty of work to do and don't want to learn h
 
 ```{r get NASS data from github}
 
-## do not run this code chunk if you chose option 1: Download NASS data yourself
+## do not run this code chunk if you chose Option 1: Download NASS data yourself
 NASS <- read.csv("https://github.com/SandiCal/morrowplots/raw/main/vignettes/NASS_data.csv")
 
 ```
@@ -205,8 +205,8 @@ ggplot2::ggplot(data = mp3_NASS) +
 
 Now that you have a combined graph, how do the data compare?
 
-The untreated continuous corn (that's where corn is grown every single year with no fertilizing treatments) starts out performing slightly better than the national average, but begins to dip over time as the untreated soil is depleted. Even so, Illinois soil is so rich that the untreated corn is pretty similar to the national average until the late 1930's when the national average starts to rise up and break away. Why is that? One reason is that around that time, hybrid corn was introduced, and it performed better than previously popular corn breeds. Hybrid corn was introduced into the Morrow Plots in 1937, which is one reason why we see both the treated and untreated yields start to rise after that.
+The untreated continuous corn (that's where corn is grown every single year with no fertility treatments) starts out performing slightly better than the national average, but begins to dip over time as the untreated soil is depleted. Even so, Illinois soil is so rich that the untreated corn is pretty similar to the national average until the late 1930's when the national average starts to rise up and break away. Why is that? One reason is that around that time, hybrid corn was introduced, and it performed better than previously popular corn breeds. Hybrid corn was introduced into the Morrow Plots in 1937, which is one reason why we see both the treated and untreated yields start to rise after that.
 
-The treated continuous corn rises a lot higher than the untreated yields, but why does it eventually plateau while the national average keeps rising? One reason is the other major variable in the Morrow Plots experiment - crop rotation. Planting corn year after year eventually depletes the soil, even when the soil is treated. This graph only includes data from continuous corn. If you repeat these steps with corn yields from plot 4 or 5, both of which rotate corn with other crops, you'd see that those plots perform better over the long term.
+The treated continuous corn rises a lot higher than the untreated yields, but why does it eventually plateau while the national average keeps rising? One reason is the other major variable in the Morrow Plots experiment - crop rotation. Planting corn year after year eventually depletes the soil, even when the soil is treated. This graph only includes data from continuous corn. If you repeat these steps with corn yields from Plot 4 or 5, both of which rotate corn with other crops, you'd see that those plots perform better over the long term.
 
 You did it! You combined datasets and graphs, plus you bothered to read through the interpretation, which proves you really care about data. Well done!

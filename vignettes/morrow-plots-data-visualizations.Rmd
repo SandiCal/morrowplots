@@ -15,11 +15,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-This exercise uses dplyr and ggplot2 to show some examples of ways you might summarize and visualize data from the Morrow Plots.
+This exercise uses dplyr and ggplot2 to show some examples of ways you might summarize and visualize data from the Morrow Plots. You should install the dplyr and ggplot2 packages if you haven't done so already.
 
-You should install the dplyr and ggplot2 packages if you haven't done so already.
-
-```{r setup}
+```{r setup, include=FALSE}
 library(morrowplots)
 library(dplyr)
 library(ggplot2)
@@ -27,7 +25,7 @@ library(ggplot2)
 
 ## Introduction
 
-The Morrow Plots experiment tests how crop rotation and soil treatments affect corn yields. Plot 3 grows continuous corn. Plot 4 grows corn every other year. At first, Plot 4 corn was alternated with oats, but starting in 1967 soybeans were planted instead. Plot 5 uses a 3-crop rotation of corn, oats, and hay. Each plot has some subplots that receive fertilizing soil treatments and some subplots that are untreated. 
+The Morrow Plots experiment tests how crop rotation and soil fertility treatments affect corn yields. Plot 3 grows continuous corn. Plot 4 grows corn every other year. At first, Plot 4 corn was alternated with oats, but starting in 1967 soybeans were planted instead. Plot 5 uses a 3-crop rotation of corn, oats, and hay. Each plot has some subplots that receive fertility treatments and some subplots that are untreated. 
 
 Before we start visualizing this data, let's first take a look at the data to see what we're working with.
 
@@ -108,8 +106,8 @@ Since geom_point plots every data point in 'yield_bush' we'll see a lot more dat
 
 ```{r plot, fig.width=7, fig.height=6}
 
-## create a smooth line plot with 'year' on the x axis and 'yield_bush' on the y axis
-## color code the lines by 'treated'
+## create a faceted scatter plot with 'year' on the x axis and 'yield_bush' on the y axis
+## color code by 'treated'
 ggplot2::ggplot(data = mpcorn)+
   ggplot2::geom_point(ggplot2::aes(x= year, y = yield_bush, color = treated))+
   
@@ -128,11 +126,11 @@ ggplot2::ggplot(data = mpcorn)+
 
 **Yields by Subplot**
 
-Each of the 3 plots also have 8 subplots that receive different soil treatments. If we filter our data to one plot, we can use facet_wrap to break the data down by subplot and arrange it the same way the subplots are organized on the field with 4 northern subplots and 4 southern subplots.
+Each of the 3 plots also have 8 subplots that receive different fertility treatments. If we filter our data to one plot, we can use facet_wrap to break the data down by subplot and arrange it the same way the subplots are organized on the field with 4 northern subplots and 4 southern subplots.
 
 ```{r subplot treated, fig.width=7, fig.height=4}
-## create a smooth line plot with 'year' on the x axis and 'yield_bush' on the y axis
-## color code the lines by 'treated'
+## create a faceted scatter plot with 'year' on the x axis and 'yield_bush' on the y axis
+## color code by 'treated'
 ggplot2::ggplot(data = dplyr::filter(mpcorn, plot_num == 5))+
   ggplot2::geom_point(ggplot2::aes(x= year, y = yield_bush, color = treated))+
   
@@ -155,7 +153,7 @@ ggplot2::ggplot(data = dplyr::filter(mpcorn, plot_num == 5))+
 Finally, we can look at the same data in even greater detail if we color code it by the specific treatment strategy.
 
 ```{r subplot treatment, fig.width=7, fig.height=4}
-## create a smooth line plot with 'year' on the x axis and 'yield_bush' on the y axis
+## create a faceted scatter plot with 'year' on the x axis and 'yield_bush' on the y axis
 ## color code the lines by 'treated'
 ggplot(data = filter(mpcorn, plot_num == 5)) +
   geom_point (aes(x= year, y = yield_bush, color = treatment)) +

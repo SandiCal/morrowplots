@@ -51,7 +51,7 @@
     <a class="dropdown-item" href="../articles/introduction.html">Introduction to the Morrow Plots</a>
     <a class="dropdown-item" href="../articles/morrow-plots-data-visualizations.html">Morrow Plots Data Visualizations</a>
     <a class="dropdown-item" href="../articles/national-yield-comparison.html">National Yield Comparison</a>
-    <a class="dropdown-item" href="../articles/plots-extras.html">Plots Extras</a>
+    <a class="dropdown-item" href="../articles/plots-etcetera.html">Plots Etcetera</a>
   </div>
 </li>
 <li class="nav-item">
@@ -84,34 +84,22 @@
     
     
 <p>This exercise uses dplyr and ggplot2 to show some examples of ways
-you might summarize and visualize data from the Morrow Plots.</p>
-<p>You should install the dplyr and ggplot2 packages if you haven’t done
-so already.</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://sandical.github.io/morrowplots/" class="external-link">morrowplots</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Attaching package: 'dplyr'</span></span>
-<span><span class="co">#&gt; The following objects are masked from 'package:stats':</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;     filter, lag</span></span>
-<span><span class="co">#&gt; The following objects are masked from 'package:base':</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;     intersect, setdiff, setequal, union</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
+you might summarize and visualize data from the Morrow Plots. You should
+install the dplyr and ggplot2 packages if you haven’t done so
+already.</p>
 <div class="section level2">
 <h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <p>The Morrow Plots experiment tests how crop rotation and soil
-treatments affect corn yields. Plot 3 grows continuous corn. Plot 4
-grows corn every other year. At first, Plot 4 corn was alternated with
-oats, but starting in 1967 soybeans were planted instead. Plot 5 uses a
-3-crop rotation of corn, oats, and hay. Each plot has some subplots that
-receive fertilizing soil treatments and some subplots that are
+fertility treatments affect corn yields. Plot 3 grows continuous corn.
+Plot 4 grows corn every other year. At first, Plot 4 corn was alternated
+with oats, but starting in 1967 soybeans were planted instead. Plot 5
+uses a 3-crop rotation of corn, oats, and hay. Each plot has some
+subplots that receive fertility treatments and some subplots that are
 untreated.</p>
 <p>Before we start visualizing this data, let’s first take a look at the
 data to see what we’re working with.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">morrowplots</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 26</span></span></span>
 <span><span class="co">#&gt;   phase  year plot  plot_num plot_dir rotation corn  crop  variety      all_corn</span></span>
@@ -149,12 +137,12 @@ that marks whether corn is planted every 1, 2, or 3 years. Since this
 data is numerical, R treats it as a double, but if we reformat it as a
 factor we can use it to group data in our visualizations. We can do that
 with the mutate function.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## name the new dataset mp corn for morrow plots corn</span></span>
 <span><span class="va">mpcorn</span> <span class="op">&lt;-</span> </span>
 <span>  </span>
 <span>  <span class="co">## filter to only include rows where corn is TRUE and 'yield_bush' is not 'NA'</span></span>
-<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">morrowplots</span>, <span class="va">corn</span> <span class="op">==</span> <span class="cn">TRUE</span>, <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">yield_bush</span><span class="op">)</span><span class="op">)</span>  <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">morrowplots</span>, <span class="va">corn</span> <span class="op">==</span> <span class="cn">TRUE</span>, <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">yield_bush</span><span class="op">)</span><span class="op">)</span>  <span class="op">%&gt;%</span> </span>
 <span>  </span>
 <span>  <span class="co">## change 'rotation' data type from double to factor</span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>rotation <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">as.factor</a></span><span class="op">(</span><span class="va">rotation</span><span class="op">)</span><span class="op">)</span></span>
@@ -180,7 +168,7 @@ the course of the experiment. Corn yields vary quite a bit from year to
 year because of uncontrolled variables like the weather. With a regular
 line graph, the lines would have drastic highs and lows, but geom_smooth
 averages the data to help us see the overall pattern.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co">## create a smooth line plot with 'year' on the x axis and 'yield_bush' on the y axis</span></span>
 <span><span class="co">## color code the lines by 'rotation'</span></span>
@@ -221,15 +209,15 @@ use ‘plot_num’ as a label.</p>
 <p>Since geom_point plots every data point in ‘yield_bush’ we’ll see a
 lot more data from Plot 3 where corn is grown every year compared with
 Plots 4 and 5 that rotate corn with other crops.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
-<span><span class="co">## create a smooth line plot with 'year' on the x axis and 'yield_bush' on the y axis</span></span>
-<span><span class="co">## color code the lines by 'treated'</span></span>
+<span><span class="co">## create a faceted scatter plot with 'year' on the x axis and 'yield_bush' on the y axis</span></span>
+<span><span class="co">## color code by 'treated'</span></span>
 <span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">mpcorn</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x<span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">yield_bush</span>, color <span class="op">=</span> <span class="va">treated</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  </span>
 <span>  <span class="co">## create a grid of related plots with facet_wrap</span></span>
-<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/vars.html" class="external-link">vars</a></span><span class="op">(</span><span class="va">plot_num</span><span class="op">)</span>, ncol <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="fu">vars</span><span class="op">(</span><span class="va">plot_num</span><span class="op">)</span>, ncol <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">+</span></span>
 <span>  </span>
 <span>  <span class="co">## add title and subtitle</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Morrow Plots Corn Yields in Bushels per Acre"</span>,</span>
@@ -240,19 +228,19 @@ Plots 4 and 5 that rotate corn with other crops.</p>
 <p><img src="morrow-plots-data-visualizations_files/figure-html/plot-1.png" width="672"></p>
 <p><br></p>
 <p><strong>Yields by Subplot</strong></p>
-<p>Each of the 3 plots also have 8 subplots that receive different soil
-treatments. If we filter our data to one plot, we can use facet_wrap to
-break the data down by subplot and arrange it the same way the subplots
-are organized on the field with 4 northern subplots and 4 southern
-subplots.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co">## create a smooth line plot with 'year' on the x axis and 'yield_bush' on the y axis</span></span>
-<span><span class="co">## color code the lines by 'treated'</span></span>
+<p>Each of the 3 plots also have 8 subplots that receive different
+fertility treatments. If we filter our data to one plot, we can use
+facet_wrap to break the data down by subplot and arrange it the same way
+the subplots are organized on the field with 4 northern subplots and 4
+southern subplots.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">## create a faceted scatter plot with 'year' on the x axis and 'yield_bush' on the y axis</span></span>
+<span><span class="co">## color code by 'treated'</span></span>
 <span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">mpcorn</span>, <span class="va">plot_num</span> <span class="op">==</span> <span class="fl">5</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x<span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">yield_bush</span>, color <span class="op">=</span> <span class="va">treated</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  </span>
 <span>  <span class="co">## create a grid of related plots with facet_wrap</span></span>
-<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/vars.html" class="external-link">vars</a></span><span class="op">(</span><span class="va">plot</span><span class="op">)</span>, ncol <span class="op">=</span> <span class="fl">4</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="fu">vars</span><span class="op">(</span><span class="va">plot</span><span class="op">)</span>, ncol <span class="op">=</span> <span class="fl">4</span><span class="op">)</span><span class="op">+</span></span>
 <span>  </span>
 <span>  <span class="co">## add title and subtitle</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Morrow Plots Corn Yields in Bushels per Acre"</span>,</span>
@@ -265,14 +253,14 @@ subplots.</p>
 <p><strong>Yields by Subplot and Specific Treatment</strong></p>
 <p>Finally, we can look at the same data in even greater detail if we
 color code it by the specific treatment strategy.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co">## create a smooth line plot with 'year' on the x axis and 'yield_bush' on the y axis</span></span>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">## create a faceted scatter plot with 'year' on the x axis and 'yield_bush' on the y axis</span></span>
 <span><span class="co">## color code the lines by 'treated'</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">mpcorn</span>, <span class="va">plot_num</span> <span class="op">==</span> <span class="fl">5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span> <span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x<span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">yield_bush</span>, color <span class="op">=</span> <span class="va">treatment</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">mpcorn</span>, <span class="va">plot_num</span> <span class="op">==</span> <span class="fl">5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span> <span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x<span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">yield_bush</span>, color <span class="op">=</span> <span class="va">treatment</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  </span>
 <span>  <span class="co">## create a grid of related plots with facet_wrap</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/vars.html" class="external-link">vars</a></span><span class="op">(</span><span class="va">plot</span><span class="op">)</span>, ncol <span class="op">=</span> <span class="fl">4</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="fu">vars</span><span class="op">(</span><span class="va">plot</span><span class="op">)</span>, ncol <span class="op">=</span> <span class="fl">4</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  </span>
 <span>  <span class="co">## add title and subtitle</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Morrow Plots Corn Yields in Bushels per Acre"</span>,</span>

@@ -5,8 +5,8 @@ articles:
   introduction: introduction.html
   morrow-plots-data-visualizations: morrow-plots-data-visualizations.html
   national-yield-comparison: national-yield-comparison.html
-  plots-extras: plots-extras.html
-last_built: 2024-05-06T16:45Z
+  plots-etcetera: plots-etcetera.html
+last_built: 2024-05-06T17:36Z
 urls:
   reference: https://SandiCal.github.io/morrowplots/reference
   article: https://SandiCal.github.io/morrowplots/articles

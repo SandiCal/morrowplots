@@ -51,7 +51,7 @@
     <a class="dropdown-item" href="../articles/introduction.html">Introduction to the Morrow Plots</a>
     <a class="dropdown-item" href="../articles/morrow-plots-data-visualizations.html">Morrow Plots Data Visualizations</a>
     <a class="dropdown-item" href="../articles/national-yield-comparison.html">National Yield Comparison</a>
-    <a class="dropdown-item" href="../articles/plots-extras.html">Plots Extras</a>
+    <a class="dropdown-item" href="../articles/plots-etcetera.html">Plots Etcetera</a>
   </div>
 </li>
 <li class="nav-item">
@@ -89,9 +89,9 @@ average?<a class="anchor" aria-label="anchor" href="#how-do-corn-yields-at-the-m
 </h2>
 <p>This exercise demonstrates how to use ggplot2 to create a graph
 comparing corn yields on the Morrow Plots to the U.S. national average.
-We’ll use the data from the morrowplots R package, and we’ll also
-download and import national average data from the National Agricultural
-Statistics Service (NASS).</p>
+We’ll use the data from the morrowplots R package, and we’ll also import
+national average data from the National Agricultural Statistics Service
+(NASS).</p>
 <p>In addition to the morrowplots package, this exercise also uses the
 dplyr and ggplot2 packages.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
@@ -125,14 +125,15 @@ we’re working with.</p>
 <p>We’ll be visualizing the corn yield data in the ‘yield_bush’
 variable, but before we can compare corn yields, we need to narrow down
 the dataset. Plots 4 and 5 grow corn every 2 to 3 years, but plot 3
-grows corn every year, so for the purposes of this exercise, we’ll
-create a new subset of data from plot 3 only.</p>
+grows corn every year. For the purposes of this exercise, we’ll create a
+new subset of data from plot 3 only, but you could repeat these steps
+with Plots 4 and 5.</p>
 <p>We also have a few years where ‘yield_bush’ data is missing and
 marked with ‘NA’. We can filter those out too so they don’t show up in
 our visualizations.</p>
 <p>If you look at the Morrow Plots data, you’ll see that each plot has
 multiple rows of data for each year. That’s because each plot has
-subplots. Some subplots receive fertilizing treatments and some don’t.
+subplots. Some subplots receive fertility treatments and some don’t.
 This is recorded in the TRUE/FALSE ‘treated’ variable. For our purposes,
 we want the annual average yield, and because treatments affect yield,
 we’ll calculate two annual averages - one for treated subplots and one
@@ -169,8 +170,8 @@ subplots.</p>
 <p><br></p>
 <p><strong>1.2 Create a line graph for plot 3</strong></p>
 <p>Now you should have a dataset called ‘mp3’ in your R environment,
-which contains annual averages for treated and untreated corn in plot 3.
-Huzzah!</p>
+which contains annual averages for treated and untreated corn in plot
+3.</p>
 <p>We can visualize the plot 3 yields in a line graph with ‘year’ on the
 x axis and ‘mp_ave’ on the y axis. We’ll use the ‘treated’ variable to
 plot treated and untreated corn with different colors.</p>
@@ -245,7 +246,7 @@ to learn how to use NASS, that’s ok. You can use the copy of the NASS
 data that’s in the morrowplots GitHub repository.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
-<span><span class="co">## do not run this code chunk if you chose option 1: Download NASS data yourself</span></span>
+<span><span class="co">## do not run this code chunk if you chose Option 1: Download NASS data yourself</span></span>
 <span><span class="va">NASS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="st">"https://github.com/SandiCal/morrowplots/raw/main/vignettes/NASS_data.csv"</span><span class="op">)</span></span></code></pre></div>
 <p><br></p>
 <p><strong>2.2 Combine NASS and mp3 data</strong></p>
@@ -316,12 +317,12 @@ graph.</p>
 <p><strong>3.2 Interpreting the Results</strong></p>
 <p>Now that you have a combined graph, how do the data compare?</p>
 <p>The untreated continuous corn (that’s where corn is grown every
-single year with no fertilizing treatments) starts out performing
-slightly better than the national average, but begins to dip over time
-as the untreated soil is depleted. Even so, Illinois soil is so rich
-that the untreated corn is pretty similar to the national average until
-the late 1930’s when the national average starts to rise up and break
-away. Why is that? One reason is that around that time, hybrid corn was
+single year with no fertility treatments) starts out performing slightly
+better than the national average, but begins to dip over time as the
+untreated soil is depleted. Even so, Illinois soil is so rich that the
+untreated corn is pretty similar to the national average until the late
+1930’s when the national average starts to rise up and break away. Why
+is that? One reason is that around that time, hybrid corn was
 introduced, and it performed better than previously popular corn breeds.
 Hybrid corn was introduced into the Morrow Plots in 1937, which is one
 reason why we see both the treated and untreated yields start to rise
@@ -332,7 +333,7 @@ keeps rising? One reason is the other major variable in the Morrow Plots
 experiment - crop rotation. Planting corn year after year eventually
 depletes the soil, even when the soil is treated. This graph only
 includes data from continuous corn. If you repeat these steps with corn
-yields from plot 4 or 5, both of which rotate corn with other crops,
+yields from Plot 4 or 5, both of which rotate corn with other crops,
 you’d see that those plots perform better over the long term.</p>
 <p>You did it! You combined datasets and graphs, plus you bothered to
 read through the interpretation, which proves you really care about

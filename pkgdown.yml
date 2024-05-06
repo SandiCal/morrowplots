@@ -1,11 +1,12 @@
 pandoc: 3.1.11
-pkgdown: 2.0.7
+pkgdown: 2.0.9
 pkgdown_sha: ~
 articles:
   introduction: introduction.html
   morrow-plots-data-visualizations: morrow-plots-data-visualizations.html
   national-yield-comparison: national-yield-comparison.html
-last_built: 2024-04-04T21:53Z
+  plots-extras: plots-extras.html
+last_built: 2024-05-06T16:45Z
 urls:
   reference: https://SandiCal.github.io/morrowplots/reference
   article: https://SandiCal.github.io/morrowplots/articles

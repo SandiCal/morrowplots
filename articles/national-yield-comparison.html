@@ -219,12 +219,13 @@ and follow the steps in the video below.</p>
 </iframe>
 <p><br></p>
 <p>NASS will give your file a super long name, so rename it
-“NASS_data.csv” instead. Then you need to make sure R knows where to
-find it, which you can do in one of two ways:</p>
+“NASS_data.csv” instead. Then you can import it into need to make sure R
+knows where to find it, which you can do in one of two ways:</p>
 <ol style="list-style-type: decimal">
 <li><p>You can move the NASS file to your working directory. In your R
 console, use getwd() to identify your working directory and then
-manually move the file to that folder.</p></li>
+manually move the file to that folder. In the code below, replace the
+URL with your file name.</p></li>
 <li><p>Or, you can add a file path to read.csv() to tell R where the
 file is. In your R console, use file.choose(), which will pull up a
 window that will let you navigate to your NASS file. R will print your
@@ -232,21 +233,14 @@ file path, which you can then add to the read.csv() code below. For
 guidance, see this <a href="https://www.statology.org/r-file-choose/" class="external-link">step-by-step
 example</a>.</p></li>
 </ol>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span></span>
-<span><span class="co">## only run this code if you chose Option 1: Download NASS data yourself</span></span>
-<span><span class="co">## delete the ## before NASS below to activate the code</span></span>
-<span><span class="co">## if your NASS file is not in your working directory, insert the file path before the file name</span></span>
-<span></span>
-<span><span class="co">## NASS &lt;- read.csv("NASS_data.csv")</span></span></code></pre></div>
 <p><br></p>
 <p><strong>Option 2: Get NASS data from GitHub</strong></p>
 <p>If you feel like you already have plenty of work to do and don’t want
 to learn how to use NASS, that’s ok. You can use the copy of the NASS
 data that’s in the morrowplots GitHub repository.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
-<span><span class="co">## do not run this code chunk if you chose Option 1: Download NASS data yourself</span></span>
+<span><span class="co">## If you chose Option 1: Download NASS data yourself, replace the URL with your file name, and path if necessary</span></span>
 <span><span class="va">NASS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="st">"https://github.com/SandiCal/morrowplots/raw/main/vignettes/NASS_data.csv"</span><span class="op">)</span></span></code></pre></div>
 <p><br></p>
 <p><strong>2.2 Combine NASS and mp3 data</strong></p>
@@ -257,7 +251,7 @@ it matches the variable in mp3 exactly (we need that for the next step),
 and we’ll change ‘Value’ to ‘nat_ave’ for national average.</p>
 <p>Once NASS is pared down, we’ll add the ‘nat_ave’ variable to the mp3
 dataset and match the data up by ‘year’.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co">## remove everything from NASS except 'Year' and 'Value'</span></span>
 <span><span class="va">NASS</span> <span class="op">&lt;-</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">NASS</span>, year <span class="op">=</span> <span class="va">Year</span>, nat_ave <span class="op">=</span> <span class="va">Value</span><span class="op">)</span></span>
@@ -293,7 +287,7 @@ average.</p>
 <p>Since this is our final graph, we can also add a title and subtitle
 to provide context, and a built-in theme to change the look of the
 graph.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">mp3_NASS</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  </span>

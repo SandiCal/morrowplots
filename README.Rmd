@@ -24,7 +24,7 @@ Use morrowplots to load, explore, and analyze nearly 150 years of ag data from t
 
 ## Installation
 
-(Update on CRAN release!) You can install the **stable** version from
+You can install the **stable** version from
 [CRAN](https://cran.r-project.org/package=morrowplots).
 
 ```r
@@ -45,9 +45,10 @@ variable has its own column, each observation has its own row, and each
 value has its own cell.
 
 ```{r, layout="l-body-outset"}
+## preview first 12 rows of data
 library(morrowplots)
 library(knitr)
-kable(head(morrowplots))
+kable(morrowplots[1:12, ])
 ```
 
 ## Variables
@@ -58,8 +59,9 @@ The codebook that describes all variables is available in the help documentation
 help(morrowplots)
 ```
  
-For example: 
+Including: 
 ```{r, echo = F, results = "asis"}
+## display just the variables and definitions from the help supplied by data.R; hard coded here as "lines = 38:100" 
 help_console <- function(topic, format=c("text", "html", "latex", "Rd"),
                          lines=NULL, before=NULL, after=NULL) {  
   format=match.arg(format)

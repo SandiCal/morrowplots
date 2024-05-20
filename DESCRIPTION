@@ -1,6 +1,6 @@
 Package: morrowplots
 Title: Historical Agricultural Data from the University of Illinois
-Version: 0.1.0
+Version: 0.1.0.9000
 Authors@R: c(
    	person("Sandi", "Caldrone", email = "caldron2@illinois.edu", 
    	role = c("cre","aut","cph"), comment = c(ORCID = "0000-0001-6392-5279")), 

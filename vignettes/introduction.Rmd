@@ -43,7 +43,7 @@ Experiments like this one are essential for testing how common farming practices
 
 # The Dataset
 
-The dataset is structured to reflect the way the actual crop field is organized and planted. The current field is separated into 3 plots - 3, 4, and 5. Originally, there were 10 plots, but over time plots 1,2 and 6-10 were for campus building projects as the university grew. This dataset contains data for the 3 enduring plots - plots 3, 4, and 5 - and covers 1888 through 2021. 
+The dataset is structured to reflect the way the actual crop field is organized and planted. The current field is separated into 3 plots - 3, 4, and 5. Originally, there were 10 plots, but over time plots 1,2 and 6-10 were used for campus building projects as the university grew. This dataset contains data for the 3 enduring plots - plots 3, 4, and 5 - and covers 1888 through 2021. 
 
 ## Plots and Crop Rotation
 

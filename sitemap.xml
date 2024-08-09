@@ -1,42 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://SandiCal.github.io/morrowplots/404.html</loc>
-  </url>
-  <url>
-    <loc>https://SandiCal.github.io/morrowplots/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://SandiCal.github.io/morrowplots/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://SandiCal.github.io/morrowplots/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://SandiCal.github.io/morrowplots/articles/introduction.html</loc>
-  </url>
-  <url>
-    <loc>https://SandiCal.github.io/morrowplots/articles/morrow-plots-data-visualizations.html</loc>
-  </url>
-  <url>
-    <loc>https://SandiCal.github.io/morrowplots/articles/national-yield-comparison.html</loc>
-  </url>
-  <url>
-    <loc>https://SandiCal.github.io/morrowplots/articles/plots-etcetera.html</loc>
-  </url>
-  <url>
-    <loc>https://SandiCal.github.io/morrowplots/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://SandiCal.github.io/morrowplots/index.html</loc>
-  </url>
-  <url>
-    <loc>https://SandiCal.github.io/morrowplots/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://SandiCal.github.io/morrowplots/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://SandiCal.github.io/morrowplots/reference/morrowplots.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://SandiCal.github.io/morrowplots/404.html</loc></url>
+<url><loc>https://SandiCal.github.io/morrowplots/LICENSE-text.html</loc></url>
+<url><loc>https://SandiCal.github.io/morrowplots/LICENSE.html</loc></url>
+<url><loc>https://SandiCal.github.io/morrowplots/articles/index.html</loc></url>
+<url><loc>https://SandiCal.github.io/morrowplots/articles/introduction.html</loc></url>
+<url><loc>https://SandiCal.github.io/morrowplots/articles/morrow-plots-data-visualizations.html</loc></url>
+<url><loc>https://SandiCal.github.io/morrowplots/articles/national-yield-comparison.html</loc></url>
+<url><loc>https://SandiCal.github.io/morrowplots/articles/plots-etcetera.html</loc></url>
+<url><loc>https://SandiCal.github.io/morrowplots/authors.html</loc></url>
+<url><loc>https://SandiCal.github.io/morrowplots/index.html</loc></url>
+<url><loc>https://SandiCal.github.io/morrowplots/news/index.html</loc></url>
+<url><loc>https://SandiCal.github.io/morrowplots/reference/index.html</loc></url>
+<url><loc>https://SandiCal.github.io/morrowplots/reference/morrowplots.html</loc></url>
 </urlset>
+

@@ -314,6 +314,5 @@ Source
 </h3>
 <p>
 Dataset published in the Illinois Data Bank at
-<https://doi.org/10.13012/B2IDB-7865141_V2>
+doi.org/10.13012/B2IDB-7865141_V2
 </p>
-</div>

@@ -36,7 +36,7 @@ A dataframe containing and 3216 rows with the following 26 variables:
 }
 }
 \source{
-Dataset published in the Illinois Data Bank at https://doi.org/10.13012/B2IDB-7865141_V2
+Dataset published in the Illinois Data Bank at doi.org/10.13012/B2IDB-7865141_V2
 }
 \usage{
 morrowplots

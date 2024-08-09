@@ -33,5 +33,5 @@
 #'  \item{damage}{Character string with free text describing known sources of significant damage to crops that year.}
 #'  \item{notes}{Character string with free text for any notes that do not fit in other fields.}
 #'  }
-#' @source Dataset published in the Illinois Data Bank at https://doi.org/10.13012/B2IDB-7865141_V2
+#' @source Dataset published in the Illinois Data Bank at doi.org/10.13012/B2IDB-7865141_V2
 "morrowplots"

@@ -6,6 +6,7 @@
 <!-- badges: start -->
 
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/morrowplots)](https://cran.r-project.org/package=morrowplots)
+
 [![R-CMD-check](https://github.com/SandiCal/morrowplots/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/SandiCal/morrowplots/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 

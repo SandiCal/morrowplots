@@ -313,6 +313,7 @@ fields.
 Source
 </h3>
 <p>
-Published dataset in the Illinios Data Bank
-<a href="https://doi.org/10.13012/B2IDB-7865141_V1">https://doi.org/10.13012/B2IDB-7865141_V1</a>
+Dataset published in the Illinois Data Bank at
+<https://doi.org/10.13012/B2IDB-7865141_V2>
 </p>
+</div>

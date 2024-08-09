@@ -80,6 +80,6 @@ help_console <- function(topic, format=c("text", "html", "latex", "Rd"),
   invisible(hs)
 }
 
-help_console(morrowplots, "html", lines = 38:100)
+help_console(morrowplots, "html", lines = 38:102)
 ```
 

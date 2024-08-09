@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 # morrowplots <a href="https://SandiCal.github.io/morrowplots/"><img src="man/figures/logo.png" align="right" height="138" alt="morrowplots website" /></a>
 
 <!-- badges: start -->
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/morrowplots)](https://cran.r-project.org/package=morrowplots) * [![R-CMD-check](https://github.com/SandiCal/morrowplots/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/SandiCal/morrowplots/actions/workflows/R-CMD-check.yaml)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/morrowplots)](https://cran.r-project.org/package=morrowplots) [![R-CMD-check](https://github.com/SandiCal/morrowplots/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/SandiCal/morrowplots/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 Use morrowplots to load, explore, and analyze nearly 150 years of agricultural data from the historic [Morrow Plots](https://aces.illinois.edu/research/history/morrow-plots) at the [University of Illinois Urbana-Champaign](https://illinois.edu/). Data collection and formats have evolved over time, and this dataset was created to aggregate decades of tabular data (previously in various physical and digital forms) into a format compatible with the R programming language. Vignettes provide mini lessons on the history of the Morrow Plots and example code for exploration of the data.

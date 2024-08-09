@@ -9,8 +9,8 @@
 [![R-CMD-check](https://github.com/SandiCal/morrowplots/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/SandiCal/morrowplots/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-Use morrowplots to load, explore, and analyze nearly 150 years of ag
-data from the historic [Morrow
+Use morrowplots to load, explore, and analyze nearly 150 years of
+agricultural data from the historic [Morrow
 Plots](https://aces.illinois.edu/research/history/morrow-plots) at the
 [University of Illinois Urbana-Champaign](https://illinois.edu/). Data
 collection and formats have evolved over time, and this dataset was
@@ -314,5 +314,5 @@ Source
 </h3>
 <p>
 Published dataset in the Illinios Data Bank
-doi.org/10.13012/B2IDB-7865141_V1
+<a href="https://doi.org/10.13012/B2IDB-7865141_V1">https://doi.org/10.13012/B2IDB-7865141_V1</a>
 </p>

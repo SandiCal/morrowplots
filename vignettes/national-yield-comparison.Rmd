@@ -114,22 +114,11 @@ To download the NASS data, go to the [NASS Quick Stats webpage](https://quicksta
 
 \
 
-NASS will give your file a super long name, so rename it "NASS_data.csv" instead. Then you need to make sure R knows where to find it, which you can do in one of two ways:
+NASS will give your file a super long name, so rename it "NASS_data.csv" instead. Then you can import it into need to make sure R knows where to find it, which you can do in one of two ways:
 
-1) You can move the NASS file to your working directory. In your R console, use getwd() to identify your working directory and then manually move the file to that folder. 
+1) You can move the NASS file to your working directory. In your R console, use getwd() to identify your working directory and then manually move the file to that folder. In the code below, replace the URL with your file name. 
 
 2) Or, you can add a file path to read.csv() to tell R where the file is. In your R console, use file.choose(), which will pull up a window that will let you navigate to your NASS file. R will print your file path, which you can then add to the read.csv() code below. For guidance, see this [step-by-step example](https://www.statology.org/r-file-choose/).
-
-
-```{r import NASS file}
-
-## only run this code if you chose Option 1: Download NASS data yourself
-## delete the ## before NASS below to activate the code
-## if your NASS file is not in your working directory, insert the file path before the file name
-
-## NASS <- read.csv("NASS_data.csv")
-
-```
 
 \
 
@@ -139,7 +128,7 @@ If you feel like you already have plenty of work to do and don't want to learn h
 
 ```{r get NASS data from github}
 
-## do not run this code chunk if you chose Option 1: Download NASS data yourself
+## If you chose Option 1: Download NASS data yourself, replace the URL with your file name, and path if necessary
 NASS <- read.csv("https://github.com/SandiCal/morrowplots/raw/main/vignettes/NASS_data.csv")
 
 ```

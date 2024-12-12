@@ -50,20 +50,20 @@ library(knitr)
 kable(morrowplots[1:12, ])
 ```
 
-| phase | year | plot | plot_num | plot_dir | rotation | corn | crop | variety      | all_corn | yield_bush | yield_ton | treated | treatment | manure | lime | nit | p205 | k20 | stover | population | plant_date | plant_day | soil_sample | damage | notes |
-|------:|-----:|:-----|---------:|:---------|---------:|:-----|:-----|:-------------|:---------|-----------:|----------:|:--------|:----------|-------:|-----:|----:|-----:|----:|-------:|-----------:|:-----------|----------:|:------------|:-------|:------|
-|     1 | 1888 | 3NA  |        3 | NW       |        1 | TRUE | CC   | Burr’s White | FALSE    |       54.3 |        NA | FALSE   | none      |     NA |   NA |  NA |   NA |  NA |     NA |         NA | 1888-05-04 |       125 | FALSE       | NA     | NA    |
-|     1 | 1888 | 3NB  |        3 | NW       |        1 | TRUE | CC   | Burr’s White | FALSE    |       54.3 |        NA | FALSE   | none      |     NA |   NA |  NA |   NA |  NA |     NA |         NA | 1888-05-04 |       125 | FALSE       | NA     | NA    |
-|     1 | 1888 | 3NC  |        3 | NE       |        1 | TRUE | CC   | Burr’s White | FALSE    |       54.3 |        NA | FALSE   | none      |     NA |   NA |  NA |   NA |  NA |     NA |         NA | 1888-05-04 |       125 | FALSE       | NA     | NA    |
-|     1 | 1888 | 3ND  |        3 | NE       |        1 | TRUE | CC   | Burr’s White | FALSE    |       54.3 |        NA | FALSE   | none      |     NA |   NA |  NA |   NA |  NA |     NA |         NA | 1888-05-04 |       125 | FALSE       | NA     | NA    |
-|     1 | 1888 | 3SA  |        3 | SW       |        1 | TRUE | CC   | Burr’s White | FALSE    |       54.3 |        NA | FALSE   | none      |     NA |   NA |  NA |   NA |  NA |     NA |         NA | 1888-05-04 |       125 | FALSE       | NA     | NA    |
-|     1 | 1888 | 3SB  |        3 | SW       |        1 | TRUE | CC   | Burr’s White | FALSE    |       54.3 |        NA | FALSE   | none      |     NA |   NA |  NA |   NA |  NA |     NA |         NA | 1888-05-04 |       125 | FALSE       | NA     | NA    |
-|     1 | 1888 | 3SC  |        3 | SE       |        1 | TRUE | CC   | Burr’s White | FALSE    |       54.3 |        NA | FALSE   | none      |     NA |   NA |  NA |   NA |  NA |     NA |         NA | 1888-05-04 |       125 | FALSE       | NA     | NA    |
-|     1 | 1888 | 3SD  |        3 | SE       |        1 | TRUE | CC   | Burr’s White | FALSE    |       54.3 |        NA | FALSE   | none      |     NA |   NA |  NA |   NA |  NA |     NA |         NA | 1888-05-04 |       125 | FALSE       | NA     | NA    |
-|     1 | 1888 | 4NA  |        4 | NW       |        2 | TRUE | C    | Burr’s White | FALSE    |       49.5 |        NA | FALSE   | none      |     NA |   NA |  NA |   NA |  NA |     NA |         NA | 1888-05-04 |       125 | FALSE       | NA     | NA    |
-|     1 | 1888 | 4NB  |        4 | NW       |        2 | TRUE | C    | Burr’s White | FALSE    |       49.5 |        NA | FALSE   | none      |     NA |   NA |  NA |   NA |  NA |     NA |         NA | 1888-05-04 |       125 | FALSE       | NA     | NA    |
-|     1 | 1888 | 4NC  |        4 | NE       |        2 | TRUE | C    | Burr’s White | FALSE    |       49.5 |        NA | FALSE   | none      |     NA |   NA |  NA |   NA |  NA |     NA |         NA | 1888-05-04 |       125 | FALSE       | NA     | NA    |
-|     1 | 1888 | 4ND  |        4 | NE       |        2 | TRUE | C    | Burr’s White | FALSE    |       49.5 |        NA | FALSE   | none      |     NA |   NA |  NA |   NA |  NA |     NA |         NA | 1888-05-04 |       125 | FALSE       | NA     | NA    |
+| phase | year | plot | plot_num | plot_dir | rotation | corn | crop | variety | all_corn | yield_bush | yield_ton | treated | treatment | manure | lime | nit | p205 | k20 | stover | population | plant_date | plant_day | soil_sample | damage | notes |
+|---:|---:|:---|---:|:---|---:|:---|:---|:---|:---|---:|---:|:---|:---|---:|---:|---:|---:|---:|---:|---:|:---|---:|:---|:---|:---|
+| 1 | 1888 | 3NA | 3 | NW | 1 | TRUE | CC | Burr’s White | FALSE | 54.3 | NA | FALSE | none | NA | NA | NA | NA | NA | NA | NA | 1888-05-04 | 125 | FALSE | NA | NA |
+| 1 | 1888 | 3NB | 3 | NW | 1 | TRUE | CC | Burr’s White | FALSE | 54.3 | NA | FALSE | none | NA | NA | NA | NA | NA | NA | NA | 1888-05-04 | 125 | FALSE | NA | NA |
+| 1 | 1888 | 3NC | 3 | NE | 1 | TRUE | CC | Burr’s White | FALSE | 54.3 | NA | FALSE | none | NA | NA | NA | NA | NA | NA | NA | 1888-05-04 | 125 | FALSE | NA | NA |
+| 1 | 1888 | 3ND | 3 | NE | 1 | TRUE | CC | Burr’s White | FALSE | 54.3 | NA | FALSE | none | NA | NA | NA | NA | NA | NA | NA | 1888-05-04 | 125 | FALSE | NA | NA |
+| 1 | 1888 | 3SA | 3 | SW | 1 | TRUE | CC | Burr’s White | FALSE | 54.3 | NA | FALSE | none | NA | NA | NA | NA | NA | NA | NA | 1888-05-04 | 125 | FALSE | NA | NA |
+| 1 | 1888 | 3SB | 3 | SW | 1 | TRUE | CC | Burr’s White | FALSE | 54.3 | NA | FALSE | none | NA | NA | NA | NA | NA | NA | NA | 1888-05-04 | 125 | FALSE | NA | NA |
+| 1 | 1888 | 3SC | 3 | SE | 1 | TRUE | CC | Burr’s White | FALSE | 54.3 | NA | FALSE | none | NA | NA | NA | NA | NA | NA | NA | 1888-05-04 | 125 | FALSE | NA | NA |
+| 1 | 1888 | 3SD | 3 | SE | 1 | TRUE | CC | Burr’s White | FALSE | 54.3 | NA | FALSE | none | NA | NA | NA | NA | NA | NA | NA | 1888-05-04 | 125 | FALSE | NA | NA |
+| 1 | 1888 | 4NA | 4 | NW | 2 | TRUE | C | Burr’s White | FALSE | 49.5 | NA | FALSE | none | NA | NA | NA | NA | NA | NA | NA | 1888-05-04 | 125 | FALSE | NA | NA |
+| 1 | 1888 | 4NB | 4 | NW | 2 | TRUE | C | Burr’s White | FALSE | 49.5 | NA | FALSE | none | NA | NA | NA | NA | NA | NA | NA | 1888-05-04 | 125 | FALSE | NA | NA |
+| 1 | 1888 | 4NC | 4 | NE | 2 | TRUE | C | Burr’s White | FALSE | 49.5 | NA | FALSE | none | NA | NA | NA | NA | NA | NA | NA | 1888-05-04 | 125 | FALSE | NA | NA |
+| 1 | 1888 | 4ND | 4 | NE | 2 | TRUE | C | Burr’s White | FALSE | 49.5 | NA | FALSE | none | NA | NA | NA | NA | NA | NA | NA | 1888-05-04 | 125 | FALSE | NA | NA |
 
 ## Variables
 
@@ -72,6 +72,7 @@ documentation.
 
 ``` r
 help(morrowplots)
+#> starting httpd help server ... done
 ```
 
 Including:
@@ -208,7 +209,7 @@ manure
 <dd>
 <p>
 An integer for the specific amount of manure applied to this plot this
-year in lbs/acre.
+year in lbs/plot.
 </p>
 </dd>
 <dt>

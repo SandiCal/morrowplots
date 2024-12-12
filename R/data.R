@@ -20,7 +20,7 @@
 #'  \item{yield_ton}{Integer value of yeild of hay in tons/acre.}
 #'  \item{treated}{A true or false variable indicating whether or not this plot was treated that year.}
 #'  \item{treatment}{Character string that describes the treatment plan for this plot; values are none, MLrP, MLbP, 0LNsPK, MLrPNsPK, LNPK, LHNPK, or MLP.}
-#'  \item{manure}{An integer for the specific amount of manure applied to this plot this year in lbs/acre.}
+#'  \item{manure}{An integer for the specific amount of manure applied to this plot this year in lbs/plot.}
 #'  \item{lime}{An integer for the specific amount of lime applied to this plot this year in tons/acre}
 #'  \item{nit}{An integer for the specific amount of nitrogen applied to this plot this year in lbs/acre.}
 #'  \item{p205}{An integer for the specific amount of phosphorus (on an oxide basis) applied to this plot this year in lbs/acre.}

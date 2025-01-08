@@ -72,7 +72,6 @@ documentation.
 
 ``` r
 help(morrowplots)
-#> starting httpd help server ... done
 ```
 
 Including:

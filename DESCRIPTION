@@ -1,6 +1,6 @@
 Package: morrowplots
 Title: Historical Agricultural Data from the University of Illinois
-Version: 0.1.0.9000
+Version: 0.1.0
 Authors@R: c(
    	person("Sandi", "Caldrone", email = "caldron2@illinois.edu", 
    	role = c("cre","aut","cph"), comment = c(ORCID = "0000-0001-6392-5279")), 
@@ -19,7 +19,7 @@ Description: Agricultural data for 1888-2021 from the Morrow Plots at the
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Depends: 
     R (>= 2.10)
 LazyData: true
